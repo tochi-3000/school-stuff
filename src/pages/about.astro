@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "About Us | School and Stuff";
+const description = "Learn about the mission behind School and Stuff and the story of how OCTOPUS was born.";
+---
+
+<Layout title={title} description={description}>
+  <section class="about-hero">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">The OCTOPUS Story</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        How a simple observation in university led to the ultimate exam prediction platform.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <article class="prose animate-fade-in" style="animation-delay: 0.2s">
+          <h2>Hi, Francis here.</h2>
+          <p>
+            I’m the founder of “School and Stuff”, the team behind the OCTOPUS Platform.
+          </p>
+          <p>
+            I got the idea of building an exam simulation platform that can (technically) predict which questions students were most likely to see in their exams by rigorously studying past questions during my first semester in the university.
+          </p>
+          <p>
+            I noticed that certain questions got asked over and over again, year after year, in every one of my courses. Which got me thinking: <strong>what if there was a way to predict which topic was going to be set in an exam?</strong>
+          </p>
+          <p>
+            And since I knew that all questions in an exam are set using the exact syllabus in a course, I was confident that it would be possible to predict which topics were going to be set. What this means is that by studying those topics, my chances of success in that exam would skyrocket.
+          </p>
+          
+          <h3>From Idea to Reality</h3>
+          <p>
+            As a software developer, I swung into action, spending 3 long months juggling building the app that would become OCTOPUS, alongside taking my classes.
+          </p>
+          <p>
+            Today, OCTOPUS is an intelligent engine that helps anyone who needs to sit for an exam pass that exam in flying colors. It's not just a platform; it's a strategic advantage.
+          </p>
+          <p>
+            I’m personally inviting you to try OCTOPUS and see what’s possible for your academic journey.
+          </p>
+
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero {
+    padding: var(--space-8) 0;
+    background-color: var(--brand-yellow-light);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .prose h2, .prose h3 {
+    margin-top: var(--space-6);
+    color: var(--brand-yellow-darker);
+  }
+
+  .prose p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+</style>

@@ -1,0 +1,115 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-text">School<span class="logo-accent"> & </span>Stuff</span>
+        </a>
+        <p class="footer-desc">Making learning fun and easy with our Ed Tech tools and physical products.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h3 class="footer-title">Products</h3>
+        <ul>
+          <li><a href="/products#octopus">Octopus SaaS</a></li>
+          <li><a href="/products#physical">Physical Gear</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-title">Company</h3>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} School and Stuff. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid #e5e7eb;
+    padding: var(--space-8) 0 var(--space-4) 0;
+    margin-top: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+  }
+
+  .logo {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: var(--space-2);
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-accent {
+    color: var(--brand-yellow-dark);
+  }
+
+  .footer-desc {
+    color: var(--text-secondary);
+    max-width: 300px;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--brand-yellow-darker);
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-4);
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+</style>

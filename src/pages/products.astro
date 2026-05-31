@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const title = "What OCTOPUS Is | School and Stuff";
+const description = "OCTOPUS is an intelligent engine that helps you pass exams in flying colors by predicting what questions are likely to be set.";
+---
+
+<Layout title={title} description={description}>
+  <section class="products-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Meet OCTOPUS</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        An intelligent prediction engine that helps anyone pass their exams in flying colors.
+      </p>
+      <div class="header-cta animate-fade-in" style="animation-delay: 0.2s">
+        <!-- Production Safeguard: Use external links securely with target="_blank" and rel="noopener" -->
+        <Button href="https://play.google.com/store/apps/details?id=com.schoolandstuff.octopus" variant="primary" target="_blank" rel="noopener noreferrer">
+          Download on Google Play
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-intro text-center animate-fade-in">
+        <h2>How it works</h2>
+        <p>
+          First, download the Octopus app from the store and sign up. Then, choose your study pathway.
+        </p>
+      </div>
+
+      <div class="pathways-grid">
+        <!-- Pathway 1: Independent Users -->
+        <article class="pathway-card">
+          <div class="pathway-header">
+            <h3>1. Independent Users</h3>
+            <span class="badge">Self-Guided</span>
+          </div>
+          <div class="pathway-body">
+            <ol class="steps-list">
+              <li>Upload your course PDF or textbook, along with up to 3 years of past questions.</li>
+              <li>We extract every single word and filter out unnecessary parts.</li>
+              <li>We organize the extracted content into a <strong>"Question Brief"</strong>.</li>
+              <li>We sort your past questions into 3 groups: <em>"Most Frequently Asked"</em>, <em>"Frequently Asked"</em>, and <em>"Rarely Asked"</em>.</li>
+              <li>Using the Question Brief, we generate <strong>300 exam questions</strong>.</li>
+              <li>We label the generated questions based on the sorting from step 4.</li>
+              <li>Take custom exam simulations in a clean, modern environment.</li>
+              <li>Get a detailed summary with explanations for failed questions to help you improve.</li>
+            </ol>
+          </div>
+        </article>
+
+        <!-- Pathway 2: Students -->
+        <article class="pathway-card">
+          <div class="pathway-header">
+            <h3>2. Students</h3>
+            <span class="badge">School Affiliated</span>
+          </div>
+          <div class="pathway-body">
+            <p class="intro-text">Joining Octopus as a student is straightforward:</p>
+            <ol class="steps-list">
+              <li>On the onboarding screen, select "Student", find your school, and choose your course.</li>
+              <li>On your dashboard, you’ll find every course provided to us by your school.</li>
+              <li>Start taking any exam simulation you want!</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+
+      <div class="tips-section">
+        <h3>💡 Tips for Success</h3>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <strong>Prediction Engine:</strong> Properly test yourself on all questions generated from your course material, regardless of the label you see on them.
+          </div>
+          <div class="tip-card">
+            <strong>Not a Replacement:</strong> Octopus is intended to help you test yourself and gain confidence. Do not skip studying your actual course materials.
+          </div>
+          <div class="tip-card">
+            <strong>Best Results:</strong> We recommend studying your materials first, then using OCTOPUS to rigorously test what you've learned.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .products-header {
+    padding: var(--space-8) 0 var(--space-6) 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-4) auto;
+  }
+
+  .how-it-works {
+    padding: var(--space-8) 0;
+  }
+
+  .section-intro {
+    max-width: 700px;
+    margin: 0 auto var(--space-8) auto;
+  }
+
+  .section-intro h2 {
+    font-size: 2.5rem;
+    color: var(--brand-yellow-darker);
+  }
+
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .pathway-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .pathway-header {
+    background: var(--brand-yellow-light);
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .pathway-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .pathway-body {
+    padding: var(--space-4);
+  }
+
+  .intro-text {
+    font-weight: 500;
+    margin-bottom: var(--space-2);
+  }
+
+  .steps-list {
+    margin: 0;
+    padding-left: var(--space-4);
+    color: var(--text-secondary);
+  }
+
+  .steps-list li {
+    margin-bottom: var(--space-2);
+    line-height: 1.6;
+  }
+
+  .steps-list strong {
+    color: var(--text-primary);
+  }
+
+  .tips-section {
+    background: var(--bg-secondary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .tips-section h3 {
+    text-align: center;
+    margin-bottom: var(--space-4);
+    color: var(--brand-yellow-darker);
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .tip-card {
+    background: var(--bg-primary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--brand-yellow);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .tip-card strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+    font-size: 1rem;
+  }
+</style>

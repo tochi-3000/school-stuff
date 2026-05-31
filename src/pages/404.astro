@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+
+const title = "Page Not Found | School and Stuff";
+const description = "Oops! We couldn't find the page you were looking for.";
+---
+
+<Layout title={title} description={description}>
+  <section class="not-found">
+    <div class="container text-center">
+      <div class="error-code">404</div>
+      <h1 class="error-title animate-fade-in">Lost in the Hallways?</h1>
+      <p class="error-desc animate-fade-in" style="animation-delay: 0.1s">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <div class="actions animate-fade-in" style="animation-delay: 0.2s">
+        <Button href="/" variant="primary">Go Back Home</Button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: var(--space-8) 0;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .error-code {
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--brand-yellow);
+    opacity: 0.5;
+    margin-bottom: var(--space-2);
+  }
+
+  .error-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-4);
+  }
+
+  .error-desc {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto var(--space-6) auto;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Privacy Policy | Seer";
+const description = "Learn how Seer protects your data, including course materials and student information.";
+---
+
+<Layout title={title} description={description}>
+  <section class="legal-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Privacy Policy</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        Last updated: June 1, 2026
+      </p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
+        <h2>1. Introduction</h2>
+        <p>
+          At <strong>School and Stuff</strong> (the creators of Seer), we take your privacy and the security of your educational data seriously. This Privacy Policy explains how we collect, use, and protect your information when you use the Seer Exam Prediction and Simulation Platform.
+        </p>
+
+        <h2>2. Data We Collect</h2>
+        <p>
+          To provide our intelligent prediction engine, we collect the following types of data:
+        </p>
+        <ul>
+          <li><strong>Account Information:</strong> Name, email address, and institutional affiliation (for student pathways).</li>
+          <li><strong>User-Generated Content:</strong> Course materials, PDFs, textbooks, and past questions you upload to the platform to generate Question Briefs.</li>
+          <li><strong>Usage Data:</strong> Your performance on simulated exams, time spent on questions, and progression metrics.</li>
+        </ul>
+
+        <h2>3. How We Use Your Data</h2>
+        <p>
+          We use your data strictly to improve your educational experience. Specifically:
+        </p>
+        <ul>
+          <li>To generate accurate and personalized exam predictions and simulations.</li>
+          <li>To track your progress and provide detailed feedback on areas needing improvement.</li>
+          <li>To maintain and improve the security of the platform.</li>
+        </ul>
+        <p>
+          <em>Production Safeguard:</em> We <strong>never</strong> sell your personal data or uploaded educational materials to third parties.
+        </p>
+
+        <h2>4. Data Security & Storage</h2>
+        <p>
+          We employ enterprise-grade security measures to protect student data. All data transmitted between your device and our servers is encrypted using industry-standard TLS. Uploaded PDFs and course materials are stored securely and are only accessible to the user who uploaded them or their affiliated institution.
+        </p>
+
+        <h2>5. Your Rights</h2>
+        <p>
+          You have the right to access, modify, or permanently delete your account and all associated data (including uploaded PDFs) at any time through your account settings.
+        </p>
+
+        <h2>6. Contact Us</h2>
+        <p>
+          If you have questions about this Privacy Policy, please contact our Data Protection Officer at <strong>privacy@schoolandstuff.com</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-header {
+    padding: var(--space-8) 0 var(--space-4) 0;
+    background-color: var(--brand-yellow-light);
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .legal-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-6);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow);
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+
+  .prose p, .prose ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .prose ul {
+    padding-left: var(--space-4);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-2);
+  }
+
+  .prose strong {
+    color: var(--text-primary);
+  }
+</style>

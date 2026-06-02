@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Terms of Service | Seer";
+const description = "Read the terms and conditions for using the Seer Exam Prediction and Simulation Platform.";
+---
+
+<Layout title={title} description={description}>
+  <section class="legal-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Terms of Service</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        Last updated: June 1, 2026
+      </p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing or using the Seer Exam Prediction and Simulation Platform (the "Service"), developed by School and Stuff, you agree to be bound by these Terms of Service. If you do not agree, you may not use the Service.
+        </p>
+
+        <h2>2. Use of the Service</h2>
+        <p>
+          Seer provides an intelligent prediction engine to simulate academic exams based on uploaded materials. You agree to use the Service solely for personal or institutional educational purposes.
+        </p>
+        <ul>
+          <li><strong>No Guarantee of Academic Success:</strong> While Seer's prediction engine categorizes questions by probability ("Most Frequently Asked", etc.), we do not guarantee that these specific questions will appear on your actual exams, nor do we guarantee passing grades. Seer is a study aid, not a replacement for studying your course materials.</li>
+          <li><strong>Lawful Use:</strong> You may only upload course materials (PDFs, past questions) that you have the lawful right to use and share. Do not upload materials that infringe on third-party intellectual property or violate your institution's academic integrity policies.</li>
+        </ul>
+
+        <h2>3. Intellectual Property</h2>
+        <p>
+          The Seer software, algorithms, design, and prediction methodologies are the exclusive intellectual property of School and Stuff. The course materials you upload remain your property or the property of their respective copyright holders. By uploading materials, you grant Seer a limited, secure license to process the text to generate "Question Briefs" and simulated exams exclusively for your account.
+        </p>
+
+        <h2>4. Limitation of Liability</h2>
+        <p>
+          In no event shall School and Stuff, its founders, or employees be liable for any indirect, incidental, or consequential damages, including but not limited to academic failure, loss of data, or disciplinary action by an academic institution arising from your use of the Service.
+        </p>
+
+        <h2>5. Account Termination</h2>
+        <p>
+          We reserve the right to suspend or terminate your account if you violate these Terms, particularly in cases of intellectual property infringement or misuse of the platform.
+        </p>
+
+        <h2>6. Contact</h2>
+        <p>
+          For any questions regarding these Terms, please contact us at <strong>legal@schoolandstuff.com</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-header {
+    padding: var(--space-8) 0 var(--space-4) 0;
+    background-color: var(--brand-yellow-light);
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .legal-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-6);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow);
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+
+  .prose p, .prose ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .prose ul {
+    padding-left: var(--space-4);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-2);
+  }
+
+  .prose strong {
+    color: var(--text-primary);
+  }
+</style>

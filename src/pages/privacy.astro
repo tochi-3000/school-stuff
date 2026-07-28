@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const title = "Privacy Policy | Seer";
-const description = "Learn how Seer protects your data, including course materials and student information.";
+const title = "Privacy Policy | School and Stuff";
+const description = "Read the Privacy Policies for School & Stuff applications including Seer and Geo.";
 ---
 
 <Layout title={title} description={description}>
@@ -10,60 +10,160 @@ const description = "Learn how Seer protects your data, including course materia
     <div class="container text-center">
       <h1 class="page-title animate-fade-in">Privacy Policy</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        Last updated: June 1, 2026
+        Select an app below to view its specific privacy policy
       </p>
     </div>
   </section>
 
   <section class="legal-content">
     <div class="container">
-      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
-        <h2>1. Introduction</h2>
-        <p>
-          At <strong>School and Stuff</strong> (the creators of Seer), we take your privacy and the security of your educational data seriously. This Privacy Policy explains how we collect, use, and protect your information when you use the Seer Exam Prediction and Simulation Platform.
-        </p>
+      <div class="content-wrapper">
+        <!-- App Switcher Tabs -->
+        <div class="tab-container" role="tablist" aria-label="Application Privacy Policies">
+          <button 
+            id="tab-seer" 
+            class="tab-button active" 
+            role="tab" 
+            aria-selected="true" 
+            aria-controls="panel-seer"
+            onclick="switchTab('seer')"
+          >
+            🔮 Seer (Exam Simulation)
+          </button>
+          <button 
+            id="tab-geo" 
+            class="tab-button" 
+            role="tab" 
+            aria-selected="false" 
+            aria-controls="panel-geo"
+            onclick="switchTab('geo')"
+          >
+            🌐 Geo (Farm & Area Measurement)
+          </button>
+        </div>
 
-        <h2>2. Data We Collect</h2>
-        <p>
-          To provide our intelligent prediction engine, we collect the following types of data:
-        </p>
-        <ul>
-          <li><strong>Account Information:</strong> Name, email address, and institutional affiliation (for student pathways).</li>
-          <li><strong>User-Generated Content:</strong> Course materials, PDFs, textbooks, and past questions you upload to the platform to generate Question Briefs.</li>
-          <li><strong>Usage Data:</strong> Your performance on simulated exams, time spent on questions, and progression metrics.</li>
-        </ul>
+        <!-- Seer Privacy Policy Panel -->
+        <div id="panel-seer" class="tab-panel active prose" role="tabpanel" aria-labelledby="tab-seer">
+          <div class="panel-header">
+            <h2>Seer — Privacy Policy</h2>
+            <span class="last-updated">Last updated: June 1, 2026</span>
+          </div>
 
-        <h2>3. How We Use Your Data</h2>
-        <p>
-          We use your data strictly to improve your educational experience. Specifically:
-        </p>
-        <ul>
-          <li>To generate accurate and personalized exam predictions and simulations.</li>
-          <li>To track your progress and provide detailed feedback on areas needing improvement.</li>
-          <li>To maintain and improve the security of the platform.</li>
-        </ul>
-        <p>
-          <em>Production Safeguard:</em> We <strong>never</strong> sell your personal data or uploaded educational materials to third parties.
-        </p>
+          <h3>1. Introduction</h3>
+          <p>
+            At <strong>School and Stuff</strong>, we take your privacy and the security of your educational data seriously. This section explains how we collect, use, and protect your information when using the Seer Exam Prediction and Simulation Platform.
+          </p>
 
-        <h2>4. Data Security & Storage</h2>
-        <p>
-          We employ enterprise-grade security measures to protect student data. All data transmitted between your device and our servers is encrypted using industry-standard TLS. Uploaded PDFs and course materials are stored securely and are only accessible to the user who uploaded them or their affiliated institution.
-        </p>
+          <h3>2. Data We Collect</h3>
+          <p>To provide our intelligent prediction engine, we collect:</p>
+          <ul>
+            <li><strong>Account Information:</strong> Name, email address, and institutional affiliation.</li>
+            <li><strong>User-Generated Content:</strong> Course materials, PDFs, textbooks, and past questions you upload to generate Question Briefs.</li>
+            <li><strong>Usage Data:</strong> Performance on simulated exams, time spent on questions, and progress metrics.</li>
+          </ul>
 
-        <h2>5. Your Rights</h2>
-        <p>
-          You have the right to access, modify, or permanently delete your account and all associated data (including uploaded PDFs) at any time through your account settings.
-        </p>
+          <h3>3. How We Use Your Data</h3>
+          <p>We use your data strictly to improve your educational experience:</p>
+          <ul>
+            <li>To generate accurate and personalized exam predictions and simulations.</li>
+            <li>To track progress and provide detailed performance feedback.</li>
+            <li>To maintain security and operational reliability.</li>
+          </ul>
+          <p>
+            <em>Production Safeguard:</em> We <strong>never</strong> sell your personal data or uploaded educational materials to third parties.
+          </p>
 
-        <h2>6. Contact Us</h2>
-        <p>
-          If you have questions about this Privacy Policy, please contact our Data Protection Officer at <strong>privacy@schoolandstuff.com</strong>.
-        </p>
+          <h3>4. Data Security & Storage</h3>
+          <p>
+            We employ enterprise-grade security measures. All data transmitted between your device and our servers is encrypted using TLS. Uploaded files are stored securely and accessible only to your account.
+          </p>
+
+          <h3>5. Your Rights</h3>
+          <p>
+            You have the right to access, modify, or permanently delete your account and all associated data at any time through your account settings or our <a href="/delete-account">Account Deletion Page</a>.
+          </p>
+        </div>
+
+        <!-- Geo Privacy Policy Panel -->
+        <div id="panel-geo" class="tab-panel prose" role="tabpanel" aria-labelledby="tab-geo">
+          <div class="panel-header">
+            <h2>Geo — Privacy Policy</h2>
+            <span class="last-updated">Last updated: July 28, 2026</span>
+          </div>
+
+          <div class="zero-data-banner">
+            🎯 <strong>Zero Data Collection Guarantee:</strong> Geo does not collect, store, transmit, or process any personal or location data.
+          </div>
+
+          <h3>1. Introduction</h3>
+          <p>
+            <strong>Geo</strong> is a farm and area measurement application developed by School and Stuff. We believe utility tools should respect user privacy completely.
+          </p>
+
+          <h3>2. Data Collection & Processing</h3>
+          <p>
+            <strong>Geo collects NO data.</strong> 
+          </p>
+          <ul>
+            <li>No personal identification is required or recorded.</li>
+            <li>No accounts or logins are used.</li>
+            <li>No location history or area calculations leave your phone.</li>
+          </ul>
+
+          <h3>3. Device Permissions (Location/GPS)</h3>
+          <p>
+            Geo requires access to your device’s Location Services (GPS) solely while the app is in use to calculate surface area, perimeter, and distances on field maps. This GPS data is processed <strong>strictly in real-time on your device hardware</strong> and is never sent to external servers or logged remotely.
+          </p>
+
+          <h3>4. Third-Party Sharing</h3>
+          <p>
+            Because we collect zero data, we do not share, sell, or transmit any information to third parties, ad networks, or analytics providers.
+          </p>
+
+          <h3>5. Contact Us</h3>
+          <p>
+            If you have questions about Geo’s privacy practices, contact us at <strong>privacy@school-and-stuff.me</strong>.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 </Layout>
+
+<script is:inline>
+  function switchTab(target) {
+    const btnSeer = document.getElementById('tab-seer');
+    const btnGeo = document.getElementById('tab-geo');
+    const panelSeer = document.getElementById('panel-seer');
+    const panelGeo = document.getElementById('panel-geo');
+
+    if (target === 'seer') {
+      btnSeer.classList.add('active');
+      btnSeer.setAttribute('aria-selected', 'true');
+      btnGeo.classList.remove('active');
+      btnGeo.setAttribute('aria-selected', 'false');
+
+      panelSeer.classList.add('active');
+      panelGeo.classList.remove('active');
+    } else {
+      btnGeo.classList.add('active');
+      btnGeo.setAttribute('aria-selected', 'true');
+      btnSeer.classList.remove('active');
+      btnSeer.setAttribute('aria-selected', 'false');
+
+      panelGeo.classList.add('active');
+      panelSeer.classList.remove('active');
+    }
+  }
+
+  // Support direct anchor linking e.g. /privacy#geo
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#geo') {
+      switchTab('geo');
+    }
+  });
+</script>
 
 <style>
   .legal-header {
@@ -85,8 +185,6 @@ const description = "Learn how Seer protects your data, including course materia
   .page-subtitle {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
 
   .legal-content {
@@ -94,35 +192,105 @@ const description = "Learn how Seer protects your data, including course materia
   }
 
   .content-wrapper {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
   }
 
-  .prose h2 {
+  /* Tab Navigation Styling */
+  .tab-container {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: var(--space-1);
+  }
+
+  .tab-button {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: var(--space-3) var(--space-5);
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    transition: all var(--transition-fast);
+  }
+
+  .tab-button:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+  }
+
+  .tab-button.active {
+    color: var(--brand-yellow-darker);
+    border-bottom: 3px solid var(--brand-yellow-darker);
+    background-color: var(--brand-yellow-light);
+  }
+
+  /* Tab Panels */
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--brand-yellow);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+  }
+
+  .panel-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .zero-data-banner {
+    background-color: #e0f2fe;
+    border-left: 4px solid #0284c7;
+    color: #0369a1;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-6);
+    font-size: 1.05rem;
+  }
+
+  .prose h3 {
     margin-top: var(--space-6);
     color: var(--text-primary);
-    border-bottom: 2px solid var(--brand-yellow);
-    display: inline-block;
-    padding-bottom: var(--space-1);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
   }
 
   .prose p, .prose ul {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: var(--space-4);
   }
 
   .prose ul {
-    padding-left: var(--space-4);
+    padding-left: var(--space-5);
   }
 
   .prose li {
     margin-bottom: var(--space-2);
-  }
-
-  .prose strong {
-    color: var(--text-primary);
   }
 </style>

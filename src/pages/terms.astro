@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const title = "Terms of Service | Seer";
-const description = "Read the terms and conditions for using the Seer Exam Prediction and Simulation Platform.";
+const title = "Terms of Service | School and Stuff";
+const description = "Read the Terms of Service for School & Stuff applications including Seer and Geo.";
 ---
 
 <Layout title={title} description={description}>
@@ -10,51 +10,149 @@ const description = "Read the terms and conditions for using the Seer Exam Predi
     <div class="container text-center">
       <h1 class="page-title animate-fade-in">Terms of Service</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        Last updated: June 1, 2026
+        Select an app below to view its specific terms of service
       </p>
     </div>
   </section>
 
   <section class="legal-content">
     <div class="container">
-      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
-        <h2>1. Acceptance of Terms</h2>
-        <p>
-          By accessing or using the Seer Exam Prediction and Simulation Platform (the "Service"), developed by School and Stuff, you agree to be bound by these Terms of Service. If you do not agree, you may not use the Service.
-        </p>
+      <div class="content-wrapper">
+        <!-- App Switcher Tabs -->
+        <div class="tab-container" role="tablist" aria-label="Application Terms of Service">
+          <button 
+            id="tab-seer" 
+            class="tab-button active" 
+            role="tab" 
+            aria-selected="true" 
+            aria-controls="panel-seer"
+            onclick="switchTab('seer')"
+          >
+            🔮 Seer (Exam Simulation)
+          </button>
+          <button 
+            id="tab-geo" 
+            class="tab-button" 
+            role="tab" 
+            aria-selected="false" 
+            aria-controls="panel-geo"
+            onclick="switchTab('geo')"
+          >
+            🌐 Geo (Farm & Area Measurement)
+          </button>
+        </div>
 
-        <h2>2. Use of the Service</h2>
-        <p>
-          Seer provides an intelligent prediction engine to simulate academic exams based on uploaded materials. You agree to use the Service solely for personal or institutional educational purposes.
-        </p>
-        <ul>
-          <li><strong>No Guarantee of Academic Success:</strong> While Seer's prediction engine categorizes questions by probability ("Most Frequently Asked", etc.), we do not guarantee that these specific questions will appear on your actual exams, nor do we guarantee passing grades. Seer is a study aid, not a replacement for studying your course materials.</li>
-          <li><strong>Lawful Use:</strong> You may only upload course materials (PDFs, past questions) that you have the lawful right to use and share. Do not upload materials that infringe on third-party intellectual property or violate your institution's academic integrity policies.</li>
-        </ul>
+        <!-- Seer Terms Panel -->
+        <div id="panel-seer" class="tab-panel active prose" role="tabpanel" aria-labelledby="tab-seer">
+          <div class="panel-header">
+            <h2>Seer — Terms of Service</h2>
+            <span class="last-updated">Last updated: June 1, 2026</span>
+          </div>
 
-        <h2>3. Intellectual Property</h2>
-        <p>
-          The Seer software, algorithms, design, and prediction methodologies are the exclusive intellectual property of School and Stuff. The course materials you upload remain your property or the property of their respective copyright holders. By uploading materials, you grant Seer a limited, secure license to process the text to generate "Question Briefs" and simulated exams exclusively for your account.
-        </p>
+          <h3>1. Acceptance of Terms</h3>
+          <p>
+            By accessing or using the Seer Exam Prediction and Simulation Platform developed by School and Stuff, you agree to be bound by these Terms of Service.
+          </p>
 
-        <h2>4. Limitation of Liability</h2>
-        <p>
-          In no event shall School and Stuff, its founders, or employees be liable for any indirect, incidental, or consequential damages, including but not limited to academic failure, loss of data, or disciplinary action by an academic institution arising from your use of the Service.
-        </p>
+          <h3>2. Use of the Service</h3>
+          <p>
+            Seer provides an intelligent prediction engine to simulate academic exams based on uploaded materials. You agree to use the Service solely for personal or institutional educational purposes.
+          </p>
+          <ul>
+            <li><strong>No Guarantee of Academic Success:</strong> Seer categorizes questions by probability ("Most Frequently Asked", etc.), but we do not guarantee specific exam questions or passing grades. Seer is a study aid, not a replacement for studying your course materials.</li>
+            <li><strong>Lawful Use:</strong> You may only upload course materials (PDFs, past questions) that you have the lawful right to use and share.</li>
+          </ul>
 
-        <h2>5. Account Termination</h2>
-        <p>
-          We reserve the right to suspend or terminate your account if you violate these Terms, particularly in cases of intellectual property infringement or misuse of the platform.
-        </p>
+          <h3>3. Intellectual Property</h3>
+          <p>
+            Seer algorithms, software, and design are the exclusive property of School and Stuff. Uploaded course materials remain your property.
+          </p>
 
-        <h2>6. Contact</h2>
-        <p>
-          For any questions regarding these Terms, please contact us at <strong>legal@schoolandstuff.me</strong>.
-        </p>
+          <h3>4. Limitation of Liability</h3>
+          <p>
+            In no event shall School and Stuff be liable for any indirect or consequential academic outcomes or data loss arising from your use of Seer.
+          </p>
+        </div>
+
+        <!-- Geo Terms Panel -->
+        <div id="panel-geo" class="tab-panel prose" role="tabpanel" aria-labelledby="tab-geo">
+          <div class="panel-header">
+            <h2>Geo — Terms of Service</h2>
+            <span class="last-updated">Last updated: July 28, 2026</span>
+          </div>
+
+          <h3>1. Acceptance of Terms</h3>
+          <p>
+            By installing or using <strong>Geo</strong> (Farm & Area Measurement Application) developed by School and Stuff, you agree to these Terms of Service.
+          </p>
+
+          <h3>2. App Functionality & Scope</h3>
+          <p>
+            Geo is designed as a portable field utility to estimate land surface area, perimeter, and distances using your device's built-in GPS location hardware.
+          </p>
+
+          <h3>3. GPS Accuracy Disclaimer</h3>
+          <p>
+            Measurement results depend directly on your device’s GPS hardware quality, satellite signal availability, and environmental conditions. 
+          </p>
+          <ul>
+            <li>Geo is provided as an estimation and planning aid for farming, field layout, and general land measurement.</li>
+            <li>Geo is <strong>not a certified legal land survey tool</strong> and should not be relied upon for official property boundary litigation or legal deeds.</li>
+          </ul>
+
+          <h3>4. Limitation of Liability</h3>
+          <p>
+            Because Geo operates strictly offline/locally and collects zero data, School and Stuff provides the app "as is" and shall not be held liable for any inaccuracies, land boundary disputes, or damages resulting from measurements made using the application.
+          </p>
+
+          <h3>5. Intellectual Property</h3>
+          <p>
+            The Geo application code, name, icon, and branding belong exclusively to School and Stuff.
+          </p>
+
+          <h3>6. Contact</h3>
+          <p>
+            For questions regarding these Terms, contact <strong>legal@school-and-stuff.me</strong>.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
 </Layout>
+
+<script is:inline>
+  function switchTab(target) {
+    const btnSeer = document.getElementById('tab-seer');
+    const btnGeo = document.getElementById('tab-geo');
+    const panelSeer = document.getElementById('panel-seer');
+    const panelGeo = document.getElementById('panel-geo');
+
+    if (target === 'seer') {
+      btnSeer.classList.add('active');
+      btnSeer.setAttribute('aria-selected', 'true');
+      btnGeo.classList.remove('active');
+      btnGeo.setAttribute('aria-selected', 'false');
+
+      panelSeer.classList.add('active');
+      panelGeo.classList.remove('active');
+    } else {
+      btnGeo.classList.add('active');
+      btnGeo.setAttribute('aria-selected', 'true');
+      btnSeer.classList.remove('active');
+      btnSeer.setAttribute('aria-selected', 'false');
+
+      panelGeo.classList.add('active');
+      panelSeer.classList.remove('active');
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.hash === '#geo') {
+      switchTab('geo');
+    }
+  });
+</script>
 
 <style>
   .legal-header {
@@ -76,8 +174,6 @@ const description = "Read the terms and conditions for using the Seer Exam Predi
   .page-subtitle {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
 
   .legal-content {
@@ -85,35 +181,95 @@ const description = "Read the terms and conditions for using the Seer Exam Predi
   }
 
   .content-wrapper {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
   }
 
-  .prose h2 {
+  /* Tab Navigation Styling */
+  .tab-container {
+    display: flex;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: var(--space-1);
+  }
+
+  .tab-button {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: var(--space-3) var(--space-5);
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    transition: all var(--transition-fast);
+  }
+
+  .tab-button:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+  }
+
+  .tab-button.active {
+    color: var(--brand-yellow-darker);
+    border-bottom: 3px solid var(--brand-yellow-darker);
+    background-color: var(--brand-yellow-light);
+  }
+
+  /* Tab Panels */
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--brand-yellow);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+  }
+
+  .panel-header h2 {
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .last-updated {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .prose h3 {
     margin-top: var(--space-6);
     color: var(--text-primary);
-    border-bottom: 2px solid var(--brand-yellow);
-    display: inline-block;
-    padding-bottom: var(--space-1);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-2);
   }
 
   .prose p, .prose ul {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: var(--space-4);
   }
 
   .prose ul {
-    padding-left: var(--space-4);
+    padding-left: var(--space-5);
   }
 
   .prose li {
     margin-bottom: var(--space-2);
-  }
-
-  .prose strong {
-    color: var(--text-primary);
   }
 </style>

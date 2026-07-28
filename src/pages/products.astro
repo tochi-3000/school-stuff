@@ -2,33 +2,35 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 
-const title = "What Seer Is | School and Stuff";
-const description = "Seer is an intelligent engine that helps you pass exams in flying colors by predicting what questions are likely to be set.";
+const title = "Our Products | School and Stuff";
+const description = "Discover Seer (Exam Prediction & Simulation) and Geo (Farm & Area Measurement) by School and Stuff.";
 ---
 
 <Layout title={title} description={description}>
+  <!-- Page Header -->
   <section class="products-header">
     <div class="container text-center">
-      <h1 class="page-title animate-fade-in">Meet Seer</h1>
+      <h1 class="page-title animate-fade-in">School & Stuff Products</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        An intelligent prediction engine that helps anyone pass their exams in flying colors.
+        Intelligent, reliable software designed to make learning and land management simple and effective.
       </p>
-      <div class="header-cta animate-fade-in" style="animation-delay: 0.2s">
-        <!-- Production Safeguard: Use external links securely with target="_blank" and rel="noopener" -->
-        <Button href="https://play.google.com/store/apps/details?id=com.seer.app" variant="primary" target="_blank" rel="noopener noreferrer">
-          Download on Google Play
-        </Button>
-      </div>
     </div>
   </section>
 
-  <section class="how-it-works">
+  <!-- Product 1: Seer -->
+  <section id="seer" class="product-section">
     <div class="container">
-      <div class="section-intro text-center animate-fade-in">
-        <h2>How it works</h2>
-        <p>
-          First, download the Seer app from the store and sign up. Then, choose your study pathway.
+      <div class="product-hero animate-fade-in">
+        <div class="product-badge">EdTech & Exam Simulation</div>
+        <h2>🔮 Seer: Exam Prediction & Simulation Platform</h2>
+        <p class="product-desc">
+          An intelligent engine that analyzes course syllabi and past questions to predict high-probability exam topics and generate custom simulation tests.
         </p>
+        <div class="product-cta">
+          <Button href="https://play.google.com/store/apps/details?id=com.seer.app" variant="primary" target="_blank" rel="noopener noreferrer">
+            Download Seer on Google Play
+          </Button>
+        </div>
       </div>
 
       <div class="pathways-grid">
@@ -40,14 +42,11 @@ const description = "Seer is an intelligent engine that helps you pass exams in 
           </div>
           <div class="pathway-body">
             <ol class="steps-list">
-              <li>Upload your course PDF or textbook, along with up to 3 years of past questions.</li>
-              <li>We extract every single word and filter out unnecessary parts.</li>
-              <li>We organize the extracted content into a <strong>"Question Brief"</strong>.</li>
-              <li>We sort your past questions into 3 groups: <em>"Most Frequently Asked"</em>, <em>"Frequently Asked"</em>, and <em>"Rarely Asked"</em>.</li>
-              <li>Using the Question Brief, we generate <strong>300 exam questions</strong>.</li>
-              <li>We label the generated questions based on the sorting from step 4.</li>
-              <li>Take custom exam simulations in a clean, modern environment.</li>
-              <li>Get a detailed summary with explanations for failed questions to help you improve.</li>
+              <li>Upload your course PDF or textbook, along with past questions.</li>
+              <li>We extract key terms and filter out noise into a <strong>"Question Brief"</strong>.</li>
+              <li>Past questions are sorted into: <em>"Most Frequently Asked"</em>, <em>"Frequently Asked"</em>, and <em>"Rarely Asked"</em>.</li>
+              <li>Generate <strong>300 exam questions</strong> to test your readiness in a real simulation environment.</li>
+              <li>Receive detailed explanations for missed questions to improve before exam day.</li>
             </ol>
           </div>
         </article>
@@ -61,26 +60,46 @@ const description = "Seer is an intelligent engine that helps you pass exams in 
           <div class="pathway-body">
             <p class="intro-text">Joining Seer as a student is straightforward:</p>
             <ol class="steps-list">
-              <li>On the onboarding screen, select "Student", find your school, and choose your course.</li>
-              <li>On your dashboard, you’ll find every course provided to us by your school.</li>
-              <li>Start taking any exam simulation you want!</li>
+              <li>Select "Student" during onboarding, select your institution, and pick your course.</li>
+              <li>Access all pre-loaded course simulations directly on your student dashboard.</li>
+              <li>Take unlimited exam simulations anytime.</li>
             </ol>
           </div>
         </article>
       </div>
+    </div>
+  </section>
 
-      <div class="tips-section">
-        <h3>💡 Tips for Success</h3>
-        <div class="tips-grid">
-          <div class="tip-card">
-            <strong>Prediction Engine:</strong> Properly test yourself on all questions generated from your course material, regardless of the label you see on them.
-          </div>
-          <div class="tip-card">
-            <strong>Not a Replacement:</strong> Seer is intended to help you test yourself and gain confidence. Do not skip studying your actual course materials.
-          </div>
-          <div class="tip-card">
-            <strong>Best Results:</strong> We recommend studying your materials first, then using Seer to rigorously test what you've learned.
-          </div>
+  <hr class="section-divider" />
+
+  <!-- Product 2: Geo -->
+  <section id="geo" class="product-section geo-section">
+    <div class="container">
+      <div class="product-hero animate-fade-in">
+        <div class="product-badge geo-badge">Land & Utility Tool</div>
+        <h2>🌐 Geo: Farm & Area Measurement</h2>
+        <p class="product-desc">
+          A fast, lightweight, and high-precision farm and area measurement application designed for farmers, surveyors, and outdoor enthusiasts.
+        </p>
+      </div>
+
+      <div class="geo-features-grid">
+        <div class="geo-card">
+          <div class="geo-icon">📍</div>
+          <h3>GPS Area & Perimeter</h3>
+          <p>Measure fields, farmland, property boundaries, and distances in real-time with GPS precision.</p>
+        </div>
+
+        <div class="geo-card">
+          <div class="geo-icon">📐</div>
+          <h3>Field & Land Mapping</h3>
+          <p>Easily calculate plot dimensions and manage farm layout planning right from your mobile device.</p>
+        </div>
+
+        <div class="geo-card privacy-card">
+          <div class="geo-icon">🔒</div>
+          <h3>100% Private by Design</h3>
+          <p><strong>Geo does not collect, store, or process user data.</strong> All your measurement logs and calculations stay entirely on your device.</p>
         </div>
       </div>
     </div>
@@ -106,29 +125,61 @@ const description = "Seer is an intelligent engine that helps you pass exams in 
   .page-subtitle {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto var(--space-4) auto;
+    max-width: 650px;
+    margin: 0 auto;
   }
 
-  .how-it-works {
+  .product-section {
     padding: var(--space-8) 0;
   }
 
-  .section-intro {
-    max-width: 700px;
-    margin: 0 auto var(--space-8) auto;
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0;
   }
 
-  .section-intro h2 {
-    font-size: 2.5rem;
+  .product-hero {
+    max-width: 800px;
+    margin: 0 auto var(--space-8) auto;
+    text-align: center;
+  }
+
+  .product-badge {
+    display: inline-block;
+    background: var(--brand-yellow-light);
     color: var(--brand-yellow-darker);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-3);
+  }
+
+  .geo-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+
+  .product-hero h2 {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .product-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-4);
   }
 
   .pathways-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-6);
-    margin-bottom: var(--space-8);
   }
 
   .pathway-card {
@@ -150,16 +201,16 @@ const description = "Seer is an intelligent engine that helps you pass exams in 
 
   .pathway-header h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--text-primary);
   }
 
   .badge {
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 0.65rem;
     border-radius: var(--radius-full);
     text-transform: uppercase;
   }
@@ -184,41 +235,43 @@ const description = "Seer is an intelligent engine that helps you pass exams in 
     line-height: 1.6;
   }
 
-  .steps-list strong {
-    color: var(--text-primary);
+  /* Geo styles */
+  .geo-section {
+    background-color: var(--bg-secondary);
   }
 
-  .tips-section {
-    background: var(--bg-secondary);
+  .geo-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .geo-card {
+    background: var(--bg-primary);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
+    border: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-sm);
   }
 
-  .tips-section h3 {
-    text-align: center;
-    margin-bottom: var(--space-4);
-    color: var(--brand-yellow-darker);
+  .geo-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-3);
   }
 
-  .tips-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-4);
-  }
-
-  .tip-card {
-    background: var(--bg-primary);
-    padding: var(--space-4);
-    border-radius: var(--radius-md);
-    border-left: 4px solid var(--brand-yellow);
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-  }
-
-  .tip-card strong {
-    display: block;
+  .geo-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
     color: var(--text-primary);
-    margin-bottom: var(--space-1);
-    font-size: 1rem;
+  }
+
+  .geo-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .privacy-card {
+    border-left: 4px solid #0284c7;
   }
 </style>

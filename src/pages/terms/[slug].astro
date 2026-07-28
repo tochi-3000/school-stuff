@@ -1,0 +1,204 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'seer' },
+      props: { appName: 'Seer', appIcon: '🔮', appType: 'Exam Simulation' }
+    },
+    {
+      params: { slug: 'geo' },
+      props: { appName: 'Geo', appIcon: '🌐', appType: 'Farm & Area Measurement' }
+    }
+  ];
+}
+
+const { slug } = Astro.params;
+const { appName, appIcon, appType } = Astro.props;
+
+const seoTitle = `${appName} Terms of Service | School and Stuff`;
+const seoDescription = `Official Terms of Service for ${appName} (${appType}) developed by School and Stuff.`;
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <section class="legal-header">
+    <div class="container text-center">
+      <div class="legal-badge">{appIcon} {appName} Terms of Service</div>
+      <h1 class="page-title animate-fade-in">{appName} Terms of Service</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : 'Last updated: July 28, 2026'}
+      </p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
+        
+        {slug === 'seer' && (
+          <div class="seer-terms">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing or using the Seer Exam Prediction and Simulation Platform developed by School and Stuff, you agree to be bound by these Terms of Service.
+            </p>
+
+            <h2>2. Use of the Service</h2>
+            <p>
+              Seer provides an intelligent prediction engine to simulate academic exams based on uploaded materials. You agree to use the Service solely for personal or institutional educational purposes.
+            </p>
+            <ul>
+              <li><strong>No Guarantee of Academic Success:</strong> Seer categorizes questions by probability ("Most Frequently Asked", etc.), but we do not guarantee specific exam questions or passing grades. Seer is a study aid, not a replacement for studying your course materials.</li>
+              <li><strong>Lawful Use:</strong> You may only upload course materials (PDFs, past questions) that you have the lawful right to use and share. Do not upload materials that violate intellectual property rights.</li>
+            </ul>
+
+            <h2>3. Intellectual Property</h2>
+            <p>
+              Seer software, algorithms, and design are the exclusive property of School and Stuff. Uploaded course materials remain your property.
+            </p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>
+              In no event shall School and Stuff be liable for any indirect or consequential academic outcomes or data loss arising from your use of Seer.
+            </p>
+
+            <h2>5. Contact</h2>
+            <p>
+              For questions regarding Seer’s Terms of Service, contact <strong>legal@school-and-stuff.me</strong>.
+            </p>
+          </div>
+        )}
+
+        {slug === 'geo' && (
+          <div class="geo-terms">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By installing or using <strong>Geo</strong> (Farm & Area Measurement Application) developed by School and Stuff, you agree to these Terms of Service.
+            </p>
+
+            <h2>2. App Functionality & Scope</h2>
+            <p>
+              Geo is designed as a portable field utility to estimate land surface area, perimeter, and distances using your device's built-in GPS location hardware.
+            </p>
+
+            <h2>3. GPS Accuracy Disclaimer</h2>
+            <p>
+              Measurement results depend directly on your device’s GPS hardware quality, satellite signal availability, and environmental conditions. 
+            </p>
+            <ul>
+              <li>Geo is provided as an estimation and planning aid for farming, field layout, and general land measurement.</li>
+              <li>Geo is <strong>not a certified legal land survey tool</strong> and should not be relied upon for official property boundary litigation or legal deeds.</li>
+            </ul>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>
+              Because Geo operates strictly offline/locally and collects zero data, School and Stuff provides the app "as is" and shall not be held liable for any inaccuracies, land boundary disputes, or damages resulting from measurements made using the application.
+            </p>
+
+            <h2>5. Intellectual Property</h2>
+            <p>
+              The Geo application code, name, icon, and branding belong exclusively to School and Stuff.
+            </p>
+
+            <h2>6. Contact</h2>
+            <p>
+              For questions regarding Geo’s Terms of Service, contact <strong>legal@school-and-stuff.me</strong>.
+            </p>
+          </div>
+        )}
+
+        <div class="terms-nav-footer">
+          <Button href="/terms" variant="secondary">&larr; Back to All Terms of Service</Button>
+          {slug === 'seer' ? (
+            <Button href="/terms/geo" variant="primary">Switch to Geo Terms of Service &rarr;</Button>
+          ) : (
+            <Button href="/terms/seer" variant="primary">Switch to Seer Terms of Service &rarr;</Button>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-header {
+    padding: var(--space-8) 0 var(--space-4) 0;
+    background-color: var(--brand-yellow-light);
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .legal-badge {
+    display: inline-block;
+    background: var(--bg-primary);
+    color: var(--brand-yellow-darker);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+
+  .page-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: var(--space-1);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .legal-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-6);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow);
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+
+  .prose p, .prose ul {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .prose ul {
+    padding-left: var(--space-5);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-2);
+  }
+
+  .terms-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid #e5e7eb;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+</style>

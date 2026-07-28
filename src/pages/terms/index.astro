@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+const title = "Terms of Service | School and Stuff";
+const description = "Select an application to view its Terms of Service: Seer or Geo.";
+
+const termsList = [
+  {
+    slug: 'seer',
+    name: 'Seer Terms of Service',
+    app: '🔮 Seer (Exam Simulation)',
+    updated: 'June 1, 2026',
+    description: 'Terms governing the use of Seer exam prediction and simulation tools.',
+    href: '/terms/seer'
+  },
+  {
+    slug: 'geo',
+    name: 'Geo Terms of Service',
+    app: '🌐 Geo (Farm & Area Measurement)',
+    updated: 'July 28, 2026',
+    description: 'Terms governing the use of Geo land and farm measurement utility software.',
+    href: '/terms/geo'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <section class="terms-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Terms of Service</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        Select an application below to read its Terms of Service.
+      </p>
+    </div>
+  </section>
+
+  <section class="terms-directory">
+    <div class="container">
+      <div class="terms-grid">
+        {termsList.map((item, index) => (
+          <article class="terms-card animate-fade-in" style={`animation-delay: ${0.2 + (index * 0.1)}s`}>
+            <div class="terms-app">{item.app}</div>
+            <h2 class="terms-title">{item.name}</h2>
+            <span class="terms-updated">Last Updated: {item.updated}</span>
+            <p class="terms-desc">{item.description}</p>
+            <div class="terms-action">
+              <Button href={item.href} variant="primary">Read {item.slug === 'seer' ? 'Seer' : 'Geo'} Terms &rarr;</Button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .terms-header {
+    padding: var(--space-8) 0 var(--space-6) 0;
+    background-color: var(--brand-yellow-light);
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+
+  .terms-directory {
+    padding: var(--space-8) 0;
+  }
+
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .terms-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .terms-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-yellow);
+  }
+
+  .terms-app {
+    font-weight: 700;
+    color: var(--brand-yellow-darker);
+    margin-bottom: var(--space-2);
+  }
+
+  .terms-title {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .terms-updated {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .terms-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+  }
+
+  .terms-action {
+    margin-top: auto;
+  }
+</style>

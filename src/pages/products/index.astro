@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+const title = "Our Products | School and Stuff";
+const description = "Explore software applications developed by School and Stuff, including Seer and Geo.";
+
+const products = [
+  {
+    slug: 'seer',
+    name: 'Seer',
+    tagline: 'Exam Prediction & Simulation Platform',
+    icon: '🔮',
+    badge: 'EdTech & Exam Simulation',
+    description: 'An intelligent engine that analyzes course syllabi and past questions to predict high-probability exam topics and generate custom simulation tests.',
+    href: '/products/seer'
+  },
+  {
+    slug: 'geo',
+    name: 'Geo',
+    tagline: 'Farm & Area Measurement Application',
+    icon: '🌐',
+    badge: 'Land & Utility Tool',
+    description: 'A fast, lightweight, and high-precision farm and area measurement application for measuring fields, property boundaries, and perimeters.',
+    href: '/products/geo'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <section class="products-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Our Products</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        Intelligent, reliable software tools built by School and Stuff.
+      </p>
+    </div>
+  </section>
+
+  <section class="products-directory">
+    <div class="container">
+      <div class="product-cards-grid">
+        {products.map((product, index) => (
+          <article class="product-card animate-fade-in" style={`animation-delay: ${0.2 + (index * 0.1)}s`}>
+            <div class="card-top">
+              <span class="card-icon">{product.icon}</span>
+              <span class="card-badge">{product.badge}</span>
+            </div>
+            <h2 class="card-title">{product.name}</h2>
+            <h3 class="card-tagline">{product.tagline}</h3>
+            <p class="card-desc">{product.description}</p>
+            <div class="card-actions">
+              <Button href={product.href} variant="primary">View Product Details &rarr;</Button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .products-header {
+    padding: var(--space-8) 0 var(--space-6) 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .products-directory {
+    padding: var(--space-8) 0;
+  }
+
+  .product-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .product-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-yellow);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-badge {
+    background: var(--brand-yellow-light);
+    color: var(--brand-yellow-darker);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-1);
+    color: var(--text-primary);
+  }
+
+  .card-tagline {
+    font-size: 1rem;
+    color: var(--brand-yellow-darker);
+    margin-bottom: var(--space-3);
+    font-weight: 600;
+  }
+
+  .card-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+  }
+
+  .card-actions {
+    margin-top: auto;
+  }
+</style>

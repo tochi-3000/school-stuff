@@ -1,0 +1,309 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'seer' },
+      props: {
+        product: {
+          id: 'seer',
+          name: 'Seer',
+          title: 'Seer — Exam Prediction & Simulation Platform',
+          tagline: 'An intelligent engine that helps students pass exams in flying colors.',
+          badge: 'EdTech & Exam Simulation',
+          icon: '🔮',
+          description: 'Seer analyzes your course syllabi and past questions to predict high-probability exam topics, generate custom simulation tests, and build exam confidence.',
+          playStoreUrl: 'https://play.google.com/store/apps/details?id=com.seer.app',
+          privacyUrl: '/privacy/seer',
+          termsUrl: '/terms/seer',
+        }
+      }
+    },
+    {
+      params: { slug: 'geo' },
+      props: {
+        product: {
+          id: 'geo',
+          name: 'Geo',
+          title: 'Geo — Farm & Area Measurement Application',
+          tagline: 'A fast, lightweight, and high-precision farm and area measurement tool.',
+          badge: 'Land & Utility Tool',
+          icon: '🌐',
+          description: 'Geo allows farmers, land surveyors, and outdoor enthusiasts to accurately measure land surface area, perimeter, and distances with real-time GPS precision.',
+          privacyUrl: '/privacy/geo',
+          termsUrl: '/terms/geo',
+        }
+      }
+    }
+  ];
+}
+
+const { product } = Astro.props;
+const seoTitle = `${product.name} | School and Stuff`;
+const seoDescription = product.description;
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <section class="product-header">
+    <div class="container text-center">
+      <div class="product-badge">{product.badge}</div>
+      <h1 class="page-title animate-fade-in">{product.icon} {product.title}</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        {product.tagline}
+      </p>
+      
+      {product.playStoreUrl && (
+        <div class="header-cta animate-fade-in" style="animation-delay: 0.2s">
+          <Button href={product.playStoreUrl} variant="primary" target="_blank" rel="noopener noreferrer">
+            Download on Google Play
+          </Button>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="product-details">
+    <div class="container">
+      {product.id === 'seer' && (
+        <div class="seer-details animate-fade-in">
+          <div class="section-intro text-center">
+            <h2>How Seer Works</h2>
+            <p>Choose your pathway to get started with exam simulations.</p>
+          </div>
+
+          <div class="pathways-grid">
+            <article class="pathway-card">
+              <div class="pathway-header">
+                <h3>1. Independent Users</h3>
+                <span class="badge">Self-Guided</span>
+              </div>
+              <div class="pathway-body">
+                <ol class="steps-list">
+                  <li>Upload your course PDF or textbook, along with past questions.</li>
+                  <li>We extract key terms and filter out noise into a <strong>"Question Brief"</strong>.</li>
+                  <li>Past questions are sorted into: <em>"Most Frequently Asked"</em>, <em>"Frequently Asked"</em>, and <em>"Rarely Asked"</em>.</li>
+                  <li>Generate <strong>300 exam questions</strong> to test your readiness in a real simulation environment.</li>
+                  <li>Receive detailed explanations for missed questions to improve before exam day.</li>
+                </ol>
+              </div>
+            </article>
+
+            <article class="pathway-card">
+              <div class="pathway-header">
+                <h3>2. Students</h3>
+                <span class="badge">School Affiliated</span>
+              </div>
+              <div class="pathway-body">
+                <p class="intro-text">Joining Seer as a student is straightforward:</p>
+                <ol class="steps-list">
+                  <li>Select "Student" during onboarding, select your institution, and pick your course.</li>
+                  <li>Access all pre-loaded course simulations directly on your student dashboard.</li>
+                  <li>Take unlimited exam simulations anytime.</li>
+                </ol>
+              </div>
+            </article>
+          </div>
+        </div>
+      )}
+
+      {product.id === 'geo' && (
+        <div class="geo-details animate-fade-in">
+          <div class="section-intro text-center">
+            <h2>Key Capabilities of Geo</h2>
+            <p>Designed for farmers, surveyors, and field workers who demand accuracy and zero data tracking.</p>
+          </div>
+
+          <div class="geo-grid">
+            <div class="geo-card">
+              <div class="geo-icon">📍</div>
+              <h3>Real-Time GPS Precision</h3>
+              <p>Walk boundaries or pin coordinates to calculate surface area, perimeter, and line distances directly on the field.</p>
+            </div>
+
+            <div class="geo-card">
+              <div class="geo-icon">🚜</div>
+              <h3>Farm & Field Mapping</h3>
+              <p>Easily calculate plot dimensions, estimate crop yield areas, and plan irrigation layout boundaries.</p>
+            </div>
+
+            <div class="geo-card privacy-highlight">
+              <div class="geo-icon">🔒</div>
+              <h3>100% Private by Design</h3>
+              <p><strong>Geo does not collect, store, or process user data.</strong> All your measurement logs and GPS calculations stay exclusively on your local device.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Link to Legal Policies -->
+      <div class="legal-links-box">
+        <h3>Legal & Privacy for {product.name}</h3>
+        <div class="legal-buttons">
+          <Button href={product.privacyUrl} variant="secondary">View {product.name} Privacy Policy</Button>
+          <Button href={product.termsUrl} variant="secondary">View {product.name} Terms of Service</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .product-header {
+    padding: var(--space-8) 0 var(--space-6) 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .product-badge {
+    display: inline-block;
+    background: var(--brand-yellow-light);
+    color: var(--brand-yellow-darker);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    margin-bottom: var(--space-3);
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-4) auto;
+  }
+
+  .header-cta {
+    margin-top: var(--space-4);
+  }
+
+  .product-details {
+    padding: var(--space-8) 0;
+  }
+
+  .section-intro {
+    max-width: 650px;
+    margin: 0 auto var(--space-8) auto;
+  }
+
+  .section-intro h2 {
+    font-size: 2.2rem;
+    color: var(--brand-yellow-darker);
+  }
+
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .pathway-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .pathway-header {
+    background: var(--brand-yellow-light);
+    padding: var(--space-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .badge {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+  }
+
+  .pathway-body {
+    padding: var(--space-4);
+  }
+
+  .steps-list {
+    margin: 0;
+    padding-left: var(--space-4);
+    color: var(--text-secondary);
+  }
+
+  .steps-list li {
+    margin-bottom: var(--space-2);
+    line-height: 1.6;
+  }
+
+  /* Geo specific grid */
+  .geo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .geo-card {
+    background: var(--bg-primary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .geo-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-3);
+  }
+
+  .geo-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .geo-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .privacy-highlight {
+    border-left: 4px solid #0284c7;
+    background: #f0f9ff;
+  }
+
+  .legal-links-box {
+    background: var(--bg-secondary);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    margin-top: var(--space-6);
+  }
+
+  .legal-links-box h3 {
+    margin-bottom: var(--space-4);
+  }
+
+  .legal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+</style>

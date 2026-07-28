@@ -1,0 +1,224 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'seer' },
+      props: { appName: 'Seer', appIcon: '🔮', appType: 'Exam Simulation' }
+    },
+    {
+      params: { slug: 'geo' },
+      props: { appName: 'Geo', appIcon: '🌐', appType: 'Farm & Area Measurement' }
+    }
+  ];
+}
+
+const { slug } = Astro.params;
+const { appName, appIcon, appType } = Astro.props;
+
+const seoTitle = `${appName} Privacy Policy | School and Stuff`;
+const seoDescription = `Official Privacy Policy for ${appName} (${appType}) developed by School and Stuff.`;
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <section class="legal-header">
+    <div class="container text-center">
+      <div class="legal-badge">{appIcon} {appName} Privacy Policy</div>
+      <h1 class="page-title animate-fade-in">{appName} Privacy Policy</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : 'Last updated: July 28, 2026'}
+      </p>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="container">
+      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
+        
+        {slug === 'seer' && (
+          <div class="seer-policy">
+            <h2>1. Introduction</h2>
+            <p>
+              At <strong>School and Stuff</strong> (the creators of Seer), we take your privacy and the security of your educational data seriously. This Privacy Policy explains how we collect, use, and protect your information when you use the Seer Exam Prediction and Simulation Platform.
+            </p>
+
+            <h2>2. Data We Collect</h2>
+            <p>To provide our intelligent prediction engine, we collect:</p>
+            <ul>
+              <li><strong>Account Information:</strong> Name, email address, and institutional affiliation (for student pathways).</li>
+              <li><strong>User-Generated Content:</strong> Course materials, PDFs, textbooks, and past questions you upload to the platform to generate Question Briefs.</li>
+              <li><strong>Usage Data:</strong> Performance on simulated exams, time spent on questions, and progression metrics.</li>
+            </ul>
+
+            <h2>3. How We Use Your Data</h2>
+            <p>We use your data strictly to improve your educational experience:</p>
+            <ul>
+              <li>To generate accurate and personalized exam predictions and simulations.</li>
+              <li>To track your progress and provide detailed feedback on areas needing improvement.</li>
+              <li>To maintain and improve the security of the platform.</li>
+            </ul>
+            <p>
+              <em>Production Safeguard:</em> We <strong>never</strong> sell your personal data or uploaded educational materials to third parties.
+            </p>
+
+            <h2>4. Data Security & Storage</h2>
+            <p>
+              We employ enterprise-grade security measures to protect student data. All data transmitted between your device and our servers is encrypted using industry-standard TLS. Uploaded files are stored securely and are accessible only to your account or affiliated institution.
+            </p>
+
+            <h2>5. Account Deletion & Rights</h2>
+            <p>
+              You have the right to access, modify, or permanently delete your account and all associated data at any time. Visit our <a href="/delete-account">Account Deletion Page</a> for step-by-step instructions.
+            </p>
+
+            <h2>6. Contact Us</h2>
+            <p>
+              If you have questions regarding Seer’s privacy practices, contact us at <strong>privacy@school-and-stuff.me</strong>.
+            </p>
+          </div>
+        )}
+
+        {slug === 'geo' && (
+          <div class="geo-policy">
+            <div class="zero-data-banner">
+              🎯 <strong>Zero Data Collection Guarantee:</strong> Geo does not collect, store, transmit, or process any personal or location data.
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>
+              <strong>Geo</strong> is a farm and area measurement application developed by School and Stuff. We believe utility software should respect user privacy completely.
+            </p>
+
+            <h2>2. Data Collection Policy</h2>
+            <p>
+              <strong>Geo collects NO data.</strong>
+            </p>
+            <ul>
+              <li>No personal identification or contact details are collected.</li>
+              <li>No user accounts or sign-ins are required.</li>
+              <li>No measurement logs, field maps, or area calculations are stored on remote servers.</li>
+            </ul>
+
+            <h2>3. GPS Location Permissions</h2>
+            <p>
+              Geo requests access to your mobile device’s Location Services (GPS) strictly while using the app to compute field boundaries, surface area, and line perimeters. All GPS processing takes place <strong>entirely in real-time on your hardware</strong> and is never logged remotely or transmitted to third parties.
+            </p>
+
+            <h2>4. Third-Party Sharing</h2>
+            <p>
+              Because Geo collects zero data, we do not share, sell, or transmit any user data to advertisers, analytical tools, or data brokers.
+            </p>
+
+            <h2>5. Contact Us</h2>
+            <p>
+              For any questions regarding Geo’s privacy policy, please reach out to <strong>privacy@school-and-stuff.me</strong>.
+            </p>
+          </div>
+        )}
+
+        <div class="policy-nav-footer">
+          <Button href="/privacy" variant="secondary">&larr; Back to All Privacy Policies</Button>
+          {slug === 'seer' ? (
+            <Button href="/privacy/geo" variant="primary">Switch to Geo Privacy Policy &rarr;</Button>
+          ) : (
+            <Button href="/privacy/seer" variant="primary">Switch to Seer Privacy Policy &rarr;</Button>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-header {
+    padding: var(--space-8) 0 var(--space-4) 0;
+    background-color: var(--brand-yellow-light);
+    border-bottom: 1px solid var(--brand-yellow);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .legal-badge {
+    display: inline-block;
+    background: var(--bg-primary);
+    color: var(--brand-yellow-darker);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+
+  .page-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-bottom: var(--space-1);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .legal-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .zero-data-banner {
+    background-color: #e0f2fe;
+    border-left: 4px solid #0284c7;
+    color: #0369a1;
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-6);
+    font-size: 1.05rem;
+  }
+
+  .prose h2 {
+    margin-top: var(--space-6);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow);
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+
+  .prose p, .prose ul {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .prose ul {
+    padding-left: var(--space-5);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-2);
+  }
+
+  .policy-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid #e5e7eb;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+</style>

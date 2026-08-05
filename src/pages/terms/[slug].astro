@@ -11,6 +11,10 @@ export function getStaticPaths() {
     {
       params: { slug: 'geo' },
       props: { appName: 'Geo', appIcon: '🌐', appType: 'Farm & Area Measurement' }
+    },
+    {
+      params: { slug: 'rearsyte' },
+      props: { appName: 'RearSyte', appIcon: '👁️', appType: 'Screen Privacy' }
     }
   ];
 }
@@ -28,7 +32,7 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
       <div class="legal-badge">{appIcon} {appName} Terms of Service</div>
       <h1 class="page-title animate-fade-in">{appName} Terms of Service</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        {slug === 'seer' ? 'Last updated: June 1, 2026' : 'Last updated: July 28, 2026'}
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : 'Last updated: August 5, 2026')}
       </p>
     </div>
   </section>
@@ -108,13 +112,82 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
           </div>
         )}
 
+        {slug === 'rearsyte' && (
+          <div class="rearsyte-terms">
+            <p>
+              Welcome to RearSyte. Please read these Terms of Service ("Terms", "Agreement") carefully before installing, accessing, or using the RearSyte mobile application ("App", "Service") operated by the developers of RearSyte ("we", "us", "our").
+            </p>
+            <p>
+              By downloading, installing, or using RearSyte, you agree to be bound by these Terms. If you do not agree to all of these Terms, do not install or use the App.
+            </p>
+
+            <h2>1. License Grant</h2>
+            <p>
+              Subject to your compliance with these Terms, we grant you a limited, personal, non-exclusive, non-transferable, non-sublicensable, revocable license to download, install, and use RearSyte on your compatible Android device for your personal, non-commercial privacy protection.
+            </p>
+
+            <h2>2. Free Trial & Payment Terms</h2>
+            <ul>
+              <li><strong>7-Day Free Trial:</strong> RearSyte provides a 7-day free trial starting upon initial installation.</li>
+              <li><strong>Lifetime License:</strong> Following the expiration of the 7-day trial period, continued access to the App requires a one-time lifetime license purchase ("buy our developers a cup of coffee") processed through Google Play In-App Purchases.</li>
+              <li><strong>No Subscriptions:</strong> The license is a one-time purchase with no recurring monthly or annual subscription fees. All transactions are final and subject to Google Play Refund Policies.</li>
+            </ul>
+
+            <h2>3. Restrictions on Use & Modification (Strictly Prohibited)</h2>
+            <p>You agree that you will not, and will not permit or assist any third party to:</p>
+            <ul>
+              <li><strong>Modify the Application:</strong> Alter, modify, adapt, translate, patch, or create derivative works of RearSyte, its source code, compiled binaries, or user interface without our express prior written consent.</li>
+              <li><strong>Reverse Engineering:</strong> Decompile, disassemble, reverse engineer, decrypt, or attempt to derive or extract the source code, underlying algorithms, or security mechanisms of the App.</li>
+              <li><strong>Bypass Security & Billing Controls:</strong> Hack, bypass, disable, tamper with, or circumvent any license verification, high-water mark timestamp checks, 7-day trial counters, or security features built into the App.</li>
+              <li><strong>Unauthorized Redistribution:</strong> Sell, rent, lease, sublicense, distribute, broadcast, upload to third-party app stores, or otherwise transfer or share the App (or any modified APKs/AABs) to any third party.</li>
+              <li><strong>Malicious Use:</strong> Use RearSyte for any illegal, unauthorized, or unethical purpose under applicable local, national, or international laws.</li>
+            </ul>
+            <p>
+              <em>Violation of any restriction in this section will result in immediate and automatic revocation of your license and may expose you to civil and criminal legal remedies.</em>
+            </p>
+
+            <h2>4. Intellectual Property Rights</h2>
+            <p>
+              The RearSyte application, including but not limited to its name, branding, logos, visual interface, graphics, user interface design, compiled code, machine learning pipeline architecture, and documentation, is the exclusive intellectual property of the developers and is protected by copyright, trademark, and other intellectual property laws.
+            </p>
+
+            <h2>5. Disclaimer of Warranties</h2>
+            <p>
+              <strong>REARSYTE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong>
+            </p>
+            <p>
+              While RearSyte utilizes on-device machine learning to detect shoulder surfers and secondary viewers, we do not guarantee 100% detection accuracy under all lighting, environmental, or spatial conditions. RearSyte is a privacy assistance utility and should not replace reasonable physical discretion when displaying sensitive data in public spaces.
+            </p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE DEVELOPERS OF REARSYTE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, UNAUTHORIZED PHYSICAL OVER-THE-SHOULDER VIEWING BY THIRD PARTIES, OR DEVICE INCOMPATIBILITY ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE APP.
+            </p>
+
+            <h2>7. Termination</h2>
+            <p>
+              We reserve the right to revoke your license and terminate access to the App immediately, without prior notice or liability, if you breach any provision of these Terms.
+            </p>
+
+            <h2>8. Changes to These Terms</h2>
+            <p>
+              We reserve the right to modify these Terms at any time. Updated versions will be posted within the App or on our official store listing page. Continued use of RearSyte after any changes constitutes your acceptance of the new Terms.
+            </p>
+
+            <h2>9. Contact Us</h2>
+            <p>
+              If you have any questions regarding these Terms of Service or wish to request consent for legitimate developer partnerships, please contact us at:
+            </p>
+            <p>
+              Email: <a href="mailto:legal@school-and-stuff.me">legal@school-and-stuff.me</a><br />
+              Developer Website: <a href="https://school-and-stuff.me">school-and-stuff.me</a>
+            </p>
+          </div>
+        )}
+
         <div class="terms-nav-footer">
           <Button href="/terms" variant="secondary">&larr; Back to All Terms of Service</Button>
-          {slug === 'seer' ? (
-            <Button href="/terms/geo" variant="primary">Switch to Geo Terms of Service &rarr;</Button>
-          ) : (
-            <Button href="/terms/seer" variant="primary">Switch to Seer Terms of Service &rarr;</Button>
-          )}
+          <Button href="/terms/rearsyte" variant="primary">View RearSyte Terms of Service &rarr;</Button>
         </div>
 
       </div>

@@ -36,6 +36,22 @@ export function getStaticPaths() {
           termsUrl: '/terms/geo',
         }
       }
+    },
+    {
+      params: { slug: 'rearsyte' },
+      props: {
+        product: {
+          id: 'rearsyte',
+          name: 'RearSyte',
+          title: 'RearSyte — Screen Privacy & Anti-Shoulder Surfing',
+          tagline: 'Protect your screen privacy with real-time on-device machine learning.',
+          badge: 'Privacy & Security Tool',
+          icon: '👁️',
+          description: 'RearSyte detects when secondary viewers look over your shoulder at your screen using Google ML Kit. Engineered under a Zero-Trust, Zero-Network Architecture.',
+          privacyUrl: '/privacy/rearsyte',
+          termsUrl: '/terms/rearsyte',
+        }
+      }
     }
   ];
 }
@@ -132,6 +148,41 @@ const seoDescription = product.description;
               <div class="geo-icon">🔒</div>
               <h3>100% Private by Design</h3>
               <p><strong>Geo does not collect, store, or process user data.</strong> All your measurement logs and GPS calculations stay exclusively on your local device.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {product.id === 'rearsyte' && (
+        <div class="rearsyte-details animate-fade-in">
+          <div class="section-intro text-center">
+            <h2>Key Security Features of RearSyte</h2>
+            <p>Engineered under a Zero-Trust, Zero-Network Architecture to guarantee absolute privacy.</p>
+          </div>
+
+          <div class="geo-grid">
+            <div class="geo-card privacy-highlight">
+              <div class="geo-icon">⚡</div>
+              <h3>Zero-Network Architecture</h3>
+              <p>Physically omits internet permissions (<code>INTERNET</code>). It is physically impossible for camera feeds or metadata to leave your Android device.</p>
+            </div>
+
+            <div class="geo-card">
+              <div class="geo-icon">👁️</div>
+              <h3>Real-Time On-Device ML</h3>
+              <p>Camera frames are analyzed strictly in volatile memory (RAM) using Google ML Kit frame-by-frame, then immediately overwritten and discarded.</p>
+            </div>
+
+            <div class="geo-card">
+              <div class="geo-icon">🔒</div>
+              <h3>Zero Biometric Storage</h3>
+              <p>No facial identities, biometric templates, photos, or video recordings are created, stored, or recognized. Only basic head orientation angles are evaluated.</p>
+            </div>
+
+            <div class="geo-card">
+              <div class="geo-icon">☕</div>
+              <h3>7-Day Trial & One-Time Purchase</h3>
+              <p>Enjoy a 7-day free trial followed by a single one-time lifetime license purchase via Google Play Store. No recurring subscriptions.</p>
             </div>
           </div>
         </div>

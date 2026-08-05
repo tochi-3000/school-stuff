@@ -11,6 +11,10 @@ export function getStaticPaths() {
     {
       params: { slug: 'geo' },
       props: { appName: 'Geo', appIcon: '🌐', appType: 'Farm & Area Measurement' }
+    },
+    {
+      params: { slug: 'rearsyte' },
+      props: { appName: 'RearSyte', appIcon: '👁️', appType: 'Screen Privacy' }
     }
   ];
 }
@@ -28,7 +32,7 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
       <div class="legal-badge">{appIcon} {appName} Privacy Policy</div>
       <h1 class="page-title animate-fade-in">{appName} Privacy Policy</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        {slug === 'seer' ? 'Last updated: June 1, 2026' : 'Last updated: July 28, 2026'}
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : 'Last updated: August 5, 2026')}
       </p>
     </div>
   </section>
@@ -118,13 +122,74 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
           </div>
         )}
 
+        {slug === 'rearsyte' && (
+          <div class="rearsyte-policy">
+            <div class="zero-data-banner">
+              🛡️ <strong>Zero-Trust, Zero-Network Architecture:</strong> RearSyte physically omits internet permissions (<code>android.permission.INTERNET</code>). 100% of processing happens on your local device.
+            </div>
+
+            <p>
+              At RearSyte, we take your privacy with absolute seriousness. RearSyte is engineered from the ground up under a Zero-Trust, Zero-Network Architecture.
+            </p>
+            <p>
+              We do not collect, store, transmit, sell, or share any personal data, camera feeds, facial images, or telemetry. Everything RearSyte does happens 100% on your local device.
+            </p>
+
+            <h2>1. Camera Access & Real-Time Processing</h2>
+            <p>RearSyte requests access to your device’s front-facing camera solely to detect secondary viewers looking over your shoulder.</p>
+            <ul>
+              <li><strong>100% Local On-Device Processing:</strong> Camera frames are analyzed strictly in volatile memory (RAM) using on-device machine learning (Google ML Kit).</li>
+              <li><strong>No Image Retention:</strong> Camera frames are evaluated in real time (frame-by-frame) and immediately overwritten and discarded.</li>
+              <li><strong>No Biometrics Stored:</strong> RearSyte does not create, store, or recognize facial identities, biometric templates, or individual faces. It only measures basic head orientation angles and bounding box dimensions in real time.</li>
+              <li><strong>No Recording:</strong> RearSyte cannot record video or take photos.</li>
+            </ul>
+
+            <h2>2. Zero-Network Architecture (No Internet Permission)</h2>
+            <p>RearSyte physically omits the <code>android.permission.INTERNET</code> permission from its application manifest.</p>
+            <ul>
+              <li><strong>Physical Transmission Prevention:</strong> Because the app has no network access permissions, it is physically impossible for your camera feed, metadata, or app statistics to leave your Android device.</li>
+              <li><strong>No External Servers:</strong> RearSyte operates with zero remote servers, zero cloud infrastructure, and zero web APIs.</li>
+            </ul>
+
+            <h2>3. Analytics, Tracking & Advertising</h2>
+            <ul>
+              <li><strong>No Analytics:</strong> We do not track app usage, crash reports, device identifiers, or user behavior.</li>
+              <li><strong>No Advertising:</strong> RearSyte contains no ad networks, no tracking scripts, and no third-party SDKs.</li>
+              <li><strong>No Advertising ID:</strong> RearSyte does not access your Android Advertising ID or device hardware IDs (IMEI, MAC Address).</li>
+            </ul>
+
+            <h2>4. In-App Purchases & Billing</h2>
+            <p>
+              RearSyte offers a 7-day free trial followed by a one-time lifetime license purchase ("buy our developers a cup of coffee").
+            </p>
+            <p>
+              Purchases are processed entirely by the official Google Play Store application using local Android Inter-Process Communication (IPC). RearSyte never sees, stores, or handles your credit card details, billing address, or payment information. All transaction data is managed exclusively by Google Play under Google's Privacy Policy.
+            </p>
+
+            <h2>5. Children's Privacy</h2>
+            <p>
+              Because RearSyte does not collect any personal data whatsoever, it fully complies with the Children’s Online Privacy Protection Act (COPPA) and General Data Protection Regulation (GDPR). The app is safe for users of all ages.
+            </p>
+
+            <h2>6. Changes to This Privacy Policy</h2>
+            <p>
+              We may update our Privacy Policy from time to time. However, our core commitment to Zero-Network Architecture and Zero-Data Collection will never change. Any updates will be posted on this page.
+            </p>
+
+            <h2>7. Contact Us</h2>
+            <p>
+              If you have any questions or security concerns regarding this Privacy Policy, feel free to reach out to us at:
+            </p>
+            <p>
+              Email: <a href="mailto:privacy@school-and-stuff.me">privacy@school-and-stuff.me</a><br />
+              Developer Website: <a href="https://school-and-stuff.me">school-and-stuff.me</a>
+            </p>
+          </div>
+        )}
+
         <div class="policy-nav-footer">
           <Button href="/privacy" variant="secondary">&larr; Back to All Privacy Policies</Button>
-          {slug === 'seer' ? (
-            <Button href="/privacy/geo" variant="primary">Switch to Geo Privacy Policy &rarr;</Button>
-          ) : (
-            <Button href="/privacy/seer" variant="primary">Switch to Seer Privacy Policy &rarr;</Button>
-          )}
+          <Button href="/privacy/rearsyte" variant="primary">View RearSyte Privacy Policy &rarr;</Button>
         </div>
 
       </div>

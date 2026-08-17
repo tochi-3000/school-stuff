@@ -15,6 +15,10 @@ export function getStaticPaths() {
     {
       params: { slug: 'rearsyte' },
       props: { appName: 'RearSyte', appIcon: '👁️', appType: 'Screen Privacy' }
+    },
+    {
+      params: { slug: 'coven' },
+      props: { appName: 'Coven', appIcon: '🚀', appType: 'Hardware-Attested Cohorts' }
     }
   ];
 }
@@ -32,7 +36,7 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
       <div class="legal-badge">{appIcon} {appName} Terms of Service</div>
       <h1 class="page-title animate-fade-in">{appName} Terms of Service</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : 'Last updated: August 5, 2026')}
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : (slug === 'rearsyte' ? 'Last updated: August 5, 2026' : 'Last updated: August 17, 2026'))}
       </p>
     </div>
   </section>
@@ -181,6 +185,104 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
             <p>
               Email: <a href="mailto:legal@school-and-stuff.me">legal@school-and-stuff.me</a><br />
               Developer Website: <a href="https://school-and-stuff.me">school-and-stuff.me</a>
+            </p>
+          </div>
+        )}
+
+        {slug === 'coven' && (
+          <div class="coven-terms">
+            <div class="zero-data-banner" style="background-color: #f0fdf4; border-left-color: #22c55e; color: #15803d;">
+              📜 <strong>Third Millennium Software / Coven Platform Terms:</strong> Effective Date: August 17, 2026.
+            </div>
+
+            <p>
+              Welcome to Coven Platform ("Coven", "Platform", "we", "us", or "our"), operated by Third Millennium Software. These Terms of Service ("Terms") govern your access to and use of our native Android application, services, and associated platform.
+            </p>
+            <p>
+              By creating an account, registering an application, joining a cohort, or accepting testing tasks, you agree to be bound by these Terms. If you do not agree to these Terms, you may not use the Platform.
+            </p>
+
+            <h2>1. Eligibility & Account Security</h2>
+            <ul>
+              <li><strong>Age Requirement:</strong> You must be at least 18 years old (or the age of majority in your jurisdiction) to use Coven.</li>
+              <li><strong>One Physical Device & Account:</strong> To maintain testing integrity, each user is permitted one primary account. Multi-accounting, emulator farms, and virtual device spoofing are strictly prohibited.</li>
+              <li><strong>Credential Protection:</strong> You are responsible for safeguarding your login credentials. You agree to notify us immediately of any unauthorized access to your account.</li>
+            </ul>
+
+            <h2>2. Platform Overview & Services</h2>
+            <p>
+              Coven is a peer-to-peer Android attestation and reciprocal testing platform designed to help mobile developers satisfy testing mandates (including Google Play’s 20-tester / 14-day closed testing requirements) through genuine, physically verified device testing.
+            </p>
+            <ul>
+              <li><strong>Testing Cohorts:</strong> Structured groups of developers who mutually test each other’s applications daily over a designated cycle.</li>
+              <li><strong>Task Marketplace:</strong> An open task board where developers post standalone testing missions and testers earn virtual platform rewards upon verified completion.</li>
+              <li><strong>Automated Proof of Work:</strong> Native recording of timed testing sessions and background usage duration validation to verify genuine human engagement.</li>
+            </ul>
+
+            <h2>3. Developer Guidelines & App Submissions</h2>
+            <p>When registering an application or posting a task on Coven:</p>
+            <ul>
+              <li><strong>Lawful Content Only:</strong> You may only submit apps, closed-track opt-in links, and promo codes for software that you own or are legally authorized to distribute. You may not submit apps containing malware, spyware, phishing mechanisms, copyright-infringing content, or material violating Google Play Developer Policies.</li>
+              <li><strong>Accurate Information:</strong> You must provide working Google Play opt-in URLs, clear testing goals, and valid demo/test credentials if login is required.</li>
+              <li><strong>Escrow Funding:</strong> When publishing paid testing tasks, required Coven Coins are locked in escrow upfront and released to testers upon verified completion or manual approval.</li>
+              <li><strong>Prompt Submission Reviews:</strong> Developers agree to review submitted tester proofs within the designated review window. Submissions not reviewed within the grace period will automatically be approved by the system.</li>
+            </ul>
+
+            <h2>4. Tester Obligations & Proof-of-Work Standards</h2>
+            <p>When accepting testing assignments:</p>
+            <ul>
+              <li><strong>Genuine Physical Device Testing:</strong> All tests must be executed on a physical Android device. Use of headless emulators, bot scripts, or modified runtimes to simulate engagement is a material breach of these Terms resulting in immediate account termination.</li>
+              <li><strong>Proof-of-Work Compliance:</strong> You agree to grant the necessary temporary permissions (including MediaProjection screen recording and Usage Access) to generate verifiable video and telemetry proof of your test sessions.</li>
+              <li><strong>Cohort Reciprocity & Strike Policy:</strong> Cohort participants must complete their assigned daily tests on time. Unexcused missed sessions or fraudulent submissions result in Strikes. Accumulating the maximum strike threshold results in forfeiture of staked slots and eviction from the active cohort.</li>
+            </ul>
+
+            <h2>5. Virtual Economy & Coven Coins</h2>
+            <ul>
+              <li><strong>In-App Utility Only:</strong> "Coven Coins" are virtual utility tokens designed exclusively to track participation, stake cohort slots, fund task escrows, and incentivize community testing within the Platform.</li>
+              <li><strong>No Real-World Monetary Value:</strong> Coven Coins do not constitute real currency, property, or financial instruments. Coins cannot be redeemed, sold, or exchanged for fiat currency or monetary consideration outside the Platform.</li>
+              <li><strong>Escrow Governance:</strong> In the event of a disputed test submission, platform administrators or automated attestation logs serve as the final authority on escrow release.</li>
+            </ul>
+
+            <h2>6. Intellectual Property Rights</h2>
+            <ul>
+              <li><strong>Developer Ownership:</strong> Developers retain all intellectual property rights, copyrights, and trade secrets in their submitted applications. Coven claims no ownership over your apps.</li>
+              <li><strong>License to Testing Telemetry:</strong> By submitting screen recording proofs, bug descriptions, and feedback, testers grant Coven and the respective app developer a non-exclusive, worldwide, royalty-free license to use, review, and store the recording and feedback solely for testing verification, bug diagnosis, and dispute resolution.</li>
+            </ul>
+
+            <h2>7. Independent Platform & Google Play Disclaimer</h2>
+            <ul>
+              <li><strong>Independent Tool:</strong> Coven Platform is an independent developer tool and is not endorsed by, affiliated with, or sponsored by Google LLC or Alphabet Inc.</li>
+              <li><strong>No Approval Guarantee:</strong> Coven guarantees that verified testers will test your application on genuine Android devices. However, Coven does not and cannot guarantee that Google will approve your app for production release, as Google Play production access decisions remain at the sole discretion of Google’s review teams.</li>
+            </ul>
+
+            <h2>8. Prohibited Conduct</h2>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Bypass, disable, or tamper with Coven’s hardware attestation, usage tracking, or screen capture verification services.</li>
+              <li>Coordinate artificial reviews, rate-tampering, or fraudulent dispute filings.</li>
+              <li>Reverse engineer, decompile, or disassemble any part of Coven's native capture engine.</li>
+              <li>Harass, threaten, or abuse other developers or testers in cohort lounges or bug report channels.</li>
+            </ul>
+
+            <h2>9. Account Deletion & Termination</h2>
+            <ul>
+              <li><strong>Termination by You:</strong> You may delete your account at any time via the in-app Profile screen or visit our <a href="/delete-account">Account Deletion Page</a>. Upon initiation, your account enters a scheduled deletion grace period, after which your personal data is permanently purged.</li>
+              <li><strong>Suspension / Termination by Coven:</strong> We reserve the right to suspend or terminate accounts that engage in fraud, emulator spoofing, malicious app distribution, or repeated cohort non-compliance without prior notice.</li>
+            </ul>
+
+            <h2>10. Limitation of Liability & Indemnification</h2>
+            <p>
+              TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COVEN AND THIRD MILLENNIUM SOFTWARE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES RESULTING FROM YOUR USE OF THE PLATFORM, THIRD-PARTY APPS TESTED, OR GOOGLE PLAY STORE POLICY ENFORCEMENT. YOU AGREE TO DEFEND, INDEMNIFY, AND HOLD HARMLESS COVEN FROM ANY CLAIMS ARISING OUT OF YOUR BREACH OF THESE TERMS OR THE CONTENT OF APPS YOU DISTRIBUTE.
+            </p>
+
+            <h2>11. Governing Law & Contact</h2>
+            <p>
+              These Terms are governed by and construed under the laws of the applicable jurisdiction without regard to conflict of law principles.
+            </p>
+            <p>
+              <strong>Entity:</strong> Third Millennium Software / Coven Test Platform<br />
+              <strong>Legal & Support Email:</strong> <a href="mailto:legal@covenplatform.com">legal@covenplatform.com</a><br />
+              <strong>Developer Website:</strong> <a href="https://school-and-stuff.me">school-and-stuff.me</a>
             </p>
           </div>
         )}

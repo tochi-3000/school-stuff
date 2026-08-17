@@ -1,0 +1,297 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'coven' },
+      props: { appName: 'Coven', appIcon: '🚀', appType: 'Hardware-Attested Cohorts' }
+    },
+    {
+      params: { slug: 'seer' },
+      props: { appName: 'Seer', appIcon: '🔮', appType: 'Exam Simulation' }
+    }
+  ];
+}
+
+const { slug } = Astro.params;
+const { appName, appIcon, appType } = Astro.props;
+
+const seoTitle = `How to Delete Your ${appName} Account & Data | School and Stuff`;
+const seoDescription = `Step-by-step account and data deletion guide for ${appName} (${appType}).`;
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <section class="deletion-header">
+    <div class="container text-center">
+      <div class="deletion-badge">{appIcon} {appName} Account Management</div>
+      <h1 class="page-title animate-fade-in">How to Delete Your {appName} Account & Data</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        {appName} — Account & Data Control Guide
+      </p>
+    </div>
+  </section>
+
+  <section class="deletion-content">
+    <div class="container">
+      <div class="content-wrapper prose animate-fade-in" style="animation-delay: 0.2s">
+        
+        {slug === 'coven' && (
+          <div class="coven-deletion">
+            <p class="lead-text">
+              At Coven Platform, you have complete ownership and control over your account and personal information. If you ever choose to leave the platform, here is everything you need to know about deleting your account and data.
+            </p>
+
+            <h2>📱 How to Delete Your Account (In-App)</h2>
+            <p>Deleting your account takes less than 30 seconds directly inside the Android app:</p>
+            <ol class="steps-list">
+              <li><strong>Open Menu:</strong> Open the Coven app and tap the Menu (☰) icon in the top left.</li>
+              <li><strong>Go to Profile:</strong> Select <em>Profile</em> from the navigation drawer.</li>
+              <li><strong>Locate Account Settings:</strong> Scroll down to the <em>Account Settings</em> card.</li>
+              <li><strong>Confirm Deletion:</strong> Tap <strong>Delete Account (7-Day Grace Period)</strong> and confirm your choice in the popup prompt.</li>
+            </ol>
+
+            <h2>🕒 The 7-Day Safety Grace Period</h2>
+            <p>To protect you against accidental deletions or unauthorized access:</p>
+            <ul>
+              <li>When you tap delete, your account is placed into a <strong>7-Day Scheduled Deletion Period</strong> (<code>scheduled_deletion_at</code>).</li>
+              <li><strong>Changed your mind?</strong> Simply log back into the Coven app anytime within those 7 days and tap <strong>Cancel Deletion & Keep Account</strong> on your profile banner to restore your account instantly.</li>
+              <li>Once the 7 days elapse without login, your deletion is automatically finalized and irreversible.</li>
+            </ul>
+
+            <h2>🗑️ What Data is Permanently Deleted?</h2>
+            <p>Upon completion of the deletion process, we permanently purge:</p>
+            <div class="table-responsive">
+              <table class="coven-table">
+                <thead>
+                  <tr>
+                    <th>Data Category</th>
+                    <th>What Gets Purged</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Account & Profile</strong></td>
+                    <td>Your email address, developer username, passwords, and authentication tokens.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Registered Apps</strong></td>
+                    <td>All app titles, package identifiers, uploaded app icons, and Google Play opt-in URLs.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Test Submissions & Media</strong></td>
+                    <td>All 30-second proof-of-work screen recordings, bug reports, and review notes.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Economy</strong></td>
+                    <td>All unused in-app Coven Coin balances and escrow stakes.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="anti-abuse-note">
+              ℹ️ <strong>Platform Integrity Note:</strong> A one-way, cryptographically salted hardware hash of device signatures is retained strictly to maintain platform anti-abuse and prevent banned bot/emulator farms from multi-accounting.
+            </div>
+
+            <div class="support-contact">
+              <p>Need assistance with your account deletion? Reach out to our developer support team at <a href="mailto:support@covenplatform.com">support@covenplatform.com</a>.</p>
+            </div>
+          </div>
+        )}
+
+        {slug === 'seer' && (
+          <div class="seer-deletion">
+            <p class="lead-text">
+              We're sorry to see you go! If you no longer need our exam prediction engine, you can permanently delete your account and all associated data by following these simple steps within the Seer app:
+            </p>
+
+            <h2>📱 How to Delete Your Seer Account</h2>
+            <ol class="steps-list">
+              <li><strong>Navigate to your Profile:</strong> Open the Seer app on your device and navigate to your "My Profile" screen directly from the main dashboard.</li>
+              <li><strong>Request Deletion:</strong> Scroll to the bottom of the profile settings and click on the red <em>"Request Account Deletion"</em> button.</li>
+              <li><strong>Grace Period:</strong> Your account will be queued for deletion. It will be <strong>automatically and permanently deleted within 7 days</strong>, unless you log back in to cancel the request.</li>
+            </ol>
+
+            <div class="image-box">
+              <img 
+                src="/delete-account-mockup.png" 
+                alt="Mockup of the Seer profile screen showing the Request Account Deletion button" 
+                class="mockup-img"
+              />
+              <p class="image-caption">Example: Seer "My Profile" Screen</p>
+            </div>
+
+            <div class="support-contact">
+              <p>Need help? Contact our support team at <a href="mailto:support@school-and-stuff.me">support@school-and-stuff.me</a>.</p>
+            </div>
+          </div>
+        )}
+
+        <div class="deletion-nav-footer">
+          <Button href="/delete-account" variant="secondary">&larr; Back to Deletion Directory</Button>
+          {slug === 'coven' ? (
+            <Button href="/delete-account/seer" variant="primary">View Seer Deletion Guide &rarr;</Button>
+          ) : (
+            <Button href="/delete-account/coven" variant="primary">View Coven Deletion Guide &rarr;</Button>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .deletion-header {
+    padding: var(--space-8) 0 var(--space-4) 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .deletion-badge {
+    display: inline-block;
+    background: var(--brand-yellow-light);
+    color: var(--brand-yellow-darker);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin-bottom: var(--space-1);
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+
+  .deletion-content {
+    padding: var(--space-8) 0;
+  }
+
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .lead-text {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .prose h2 {
+    margin-top: var(--space-6);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow);
+    display: inline-block;
+    padding-bottom: var(--space-1);
+    margin-bottom: var(--space-3);
+  }
+
+  .prose p, .prose ul, .prose ol {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+  }
+
+  .prose ul, .prose ol {
+    padding-left: var(--space-5);
+  }
+
+  .prose li {
+    margin-bottom: var(--space-2);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    margin-bottom: var(--space-6);
+  }
+
+  .coven-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e5e7eb;
+  }
+
+  .coven-table th {
+    background: var(--brand-yellow-light);
+    color: var(--text-primary);
+    padding: var(--space-4);
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 2px solid var(--brand-yellow);
+  }
+
+  .coven-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--text-secondary);
+  }
+
+  .anti-abuse-note {
+    background-color: var(--bg-secondary);
+    border-left: 4px solid var(--brand-yellow-darker);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .support-contact {
+    background-color: var(--bg-secondary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-6);
+  }
+
+  .image-box {
+    margin: var(--space-6) 0;
+    text-align: center;
+  }
+
+  .mockup-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e5e7eb;
+  }
+
+  .image-caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: var(--space-2);
+  }
+
+  .deletion-nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid #e5e7eb;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+</style>

@@ -52,6 +52,22 @@ export function getStaticPaths() {
           termsUrl: '/terms/rearsyte',
         }
       }
+    },
+    {
+      params: { slug: 'coven' },
+      props: {
+        product: {
+          id: 'coven',
+          name: 'Coven',
+          title: 'Never Stress Over Google Play’s 20-Tester Rule Again',
+          tagline: 'Coven is the native Android attestation platform that pairs indie developers into verified, automated testing cohorts. 14 days of real device testing, guaranteed proof of work, and zero ghosting.',
+          badge: '100% Real Physical Devices • Hardware-Attested • Zero Emulators',
+          icon: '🚀',
+          description: 'Coven pairs indie developers into verified, automated testing cohorts. 14 days of real device testing, guaranteed proof of work, and zero ghosting.',
+          privacyUrl: '/privacy/coven',
+          termsUrl: '/terms/coven',
+        }
+      }
     }
   ];
 }
@@ -183,6 +199,188 @@ const seoDescription = product.description;
               <div class="geo-icon">☕</div>
               <h3>7-Day Trial & One-Time Purchase</h3>
               <p>Enjoy a 7-day free trial followed by a single one-time lifetime license purchase via Google Play Store. No recurring subscriptions.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {product.id === 'coven' && (
+        <div class="coven-details animate-fade-in">
+          <!-- Problem Section -->
+          <div class="coven-section problem-box">
+            <h2 class="section-heading text-center">🛑 The 20-Tester Mandate Is Killing Indie Apps</h2>
+            <p class="section-lead text-center">If you’ve tried to launch an Android app recently, you know the nightmare:</p>
+            <div class="problem-grid">
+              <div class="problem-card">
+                <div class="problem-icon">👻</div>
+                <h3>The Discord & Reddit Ghost Town</h3>
+                <p>You swap links with 20 strangers. By Day 3, 18 of them stop opening your app.</p>
+              </div>
+              <div class="problem-card">
+                <div class="problem-icon">❌</div>
+                <h3>Google Play Rejections</h3>
+                <p>Google tracks engagement. If testers don’t actually launch and use your app, production access gets denied after 14 wasted days.</p>
+              </div>
+              <div class="problem-card">
+                <div class="problem-icon">💸</div>
+                <h3>Overpriced "Tester Farms"</h3>
+                <p>Shady agencies charge $100+ to run bots and emulators that Google’s automated review filters easily detect and flag.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solution Section -->
+          <div class="coven-section solution-box">
+            <h2 class="section-heading text-center">💡 Meet Coven: Attestation-Backed Reciprocal Testing</h2>
+            <p class="section-lead text-center">
+              Coven replaces informal favors with a cryptographically verified, peer-to-peer testing network.
+            </p>
+            <div class="solution-highlight text-center">
+              <p>
+                Every tester in your cohort is a fellow developer with skin in the game. When they test your app, Coven’s native capture engine proves they launched it on real physical hardware, interacted with it, and submitted actionable feedback.
+              </p>
+            </div>
+          </div>
+
+          <!-- How It Works Section -->
+          <div class="coven-section steps-box">
+            <h2 class="section-heading text-center">⚙️ How It Works — 4 Easy Steps</h2>
+            <div class="coven-steps-grid">
+              <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>Register Your App</h3>
+                <p>Add your Google Play Closed Track link, test credentials, and testing goals in 60 seconds.</p>
+              </div>
+              <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>Lock Your Slot in a 20-Dev Cohort</h3>
+                <p>Join a synchronized testing circle. Everyone agrees to test each other’s apps daily throughout the 14-day cycle.</p>
+              </div>
+              <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>Perform 30-Second Attested Tests</h3>
+                <p>Launch assigned daily apps directly through Coven. Our native engine records a verified 30-second screen capture session and monitors foreground usage.</p>
+              </div>
+              <div class="step-card">
+                <div class="step-num">4</div>
+                <h3>Unlock Production Access</h3>
+                <p>Receive real bug reports, continuous daily analytics, and verified proof of work that satisfies Google Play’s engagement algorithms.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core Features Table -->
+          <div class="coven-section features-table-box">
+            <h2 class="section-heading text-center">🛡️ Core Features & Differentiators</h2>
+            <div class="table-responsive">
+              <table class="coven-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>What It Does</th>
+                    <th>Why You’ll Love It</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>🔒 Hardware Attestation</strong></td>
+                    <td>Verifies physical Android device integrity and OS signatures via Android KeyStore.</td>
+                    <td>Zero bots. Zero emulator farms. 100% genuine Android hardware.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>📹 Automated Proof of Work</strong></td>
+                    <td>Captures a 30s native video proof and validates active foreground time.</td>
+                    <td>You see video proof of your app running on different screen sizes and OS versions.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>🤝 Cohort Accountability & Strikes</strong></td>
+                    <td>Enforces daily reciprocity. Testers who miss days receive strikes and get evicted.</td>
+                    <td>Eliminates ghosting. Everyone tests so their own app gets tested.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>⚡ Task Marketplace</strong></td>
+                    <td>Need extra testers fast? Post bounty tasks funded with in-app Coven Coins.</td>
+                    <td>Scale your testing pool beyond cohorts whenever you need quick feedback.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>🌍 13 Built-in Languages</strong></td>
+                    <td>Full global localization across English, Spanish, French, German, Japanese, Chinese, Arabic, and more.</td>
+                    <td>Connect with a diverse, international pool of beta testers across global markets.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="coven-section comparison-box">
+            <h2 class="section-heading text-center">📊 Why Developers Choose Coven</h2>
+            <div class="table-responsive">
+              <table class="coven-table comparison-table">
+                <thead>
+                  <tr>
+                    <th>Criteria</th>
+                    <th>Reddit / Discord Swaps</th>
+                    <th>Paid "Tester Farms"</th>
+                    <th>Coven Platform</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Real Physical Devices</strong></td>
+                    <td class="badge-neutral">❓ Unknown</td>
+                    <td class="badge-bad">❌ Emulators / Bots</td>
+                    <td class="badge-good">✅ 100% Attested Hardware</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Engagement Verification</strong></td>
+                    <td class="badge-bad">❌ None (Honor system)</td>
+                    <td class="badge-bad">❌ Fake clicks</td>
+                    <td class="badge-good">✅ 30s Video Proof + Telemetry</td>
+                  </tr>
+                  <tr>
+                    <td><strong>14-Day Completion Rate</strong></td>
+                    <td class="badge-bad">📉 Less than 15%</td>
+                    <td class="badge-warn">⚠️ High ban risk</td>
+                    <td class="badge-good">📈 98%+ Cohort Retention</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Actionable Bug Reports</strong></td>
+                    <td class="badge-bad">❌ Rare</td>
+                    <td class="badge-bad">❌ Generic text</td>
+                    <td class="badge-good">✅ In-Depth Video Reproduction</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>Free (High time cost)</td>
+                    <td>💰 $80 – $250</td>
+                    <td class="badge-good">✨ 100% Free via Reciprocity</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div class="coven-section faq-box">
+            <h2 class="section-heading text-center">💬 Frequently Asked Questions</h2>
+            <div class="faq-grid">
+              <div class="faq-card">
+                <h3>Q: Is Coven compliant with Google Play policies?</h3>
+                <p>A: Yes. Coven is not an incentivized review platform or rating scheme. It is a genuine developer beta-testing community. Testers download your app directly through official Google Play Closed Testing tracks and test on physical devices, which directly aligns with Google’s requirement for authentic pre-launch testing.</p>
+              </div>
+              <div class="faq-card">
+                <h3>Q: How does the 30-second screen capture work?</h3>
+                <p>A: When you begin an assigned test session, Coven requests one-time MediaProjection consent to record a 30-second clip of you interacting with the target app. The video is securely uploaded to the app developer as proof of work. Coven never records outside of active testing sessions.</p>
+              </div>
+              <div class="faq-card">
+                <h3>Q: What happens if someone in my cohort stops testing?</h3>
+                <p>A: Coven’s automated strike system flags inactive members. If a member misses testing deadlines, they receive strikes, forfeit their coin stake, and are hot-swapped with eager standby testers so your app never loses its required tester count.</p>
+              </div>
+              <div class="faq-card">
+                <h3>Q: Do I have to pay to use Coven?</h3>
+                <p>A: No. Coven operates on a reciprocal model. By testing other developers’ apps, you earn Coven Coins and cohort credits to have your own app tested completely free.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -356,5 +554,140 @@ const seoDescription = product.description;
     justify-content: center;
     gap: var(--space-4);
     flex-wrap: wrap;
+  }
+
+  /* Coven Specific Landing Page Styles */
+  .coven-section {
+    margin-bottom: var(--space-12);
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .section-lead {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+  }
+
+  .problem-grid, .coven-steps-grid, .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .problem-card, .step-card, .faq-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .problem-card {
+    border-top: 4px solid #ef4444;
+  }
+
+  .problem-icon {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .solution-box {
+    background: linear-gradient(135deg, var(--brand-yellow-light) 0%, var(--bg-primary) 100%);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--brand-yellow);
+  }
+
+  .solution-highlight p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .step-card {
+    position: relative;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--brand-yellow);
+    color: var(--text-primary);
+    font-weight: 800;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-3);
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .coven-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e5e7eb;
+  }
+
+  .coven-table th {
+    background: var(--brand-yellow-light);
+    color: var(--text-primary);
+    padding: var(--space-4);
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 2px solid var(--brand-yellow);
+  }
+
+  .coven-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid #e5e7eb;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .coven-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .badge-good {
+    color: #15803d;
+    font-weight: 700;
+  }
+
+  .badge-bad {
+    color: #b91c1c;
+  }
+
+  .badge-warn {
+    color: #b45309;
+  }
+
+  .badge-neutral {
+    color: var(--text-secondary);
+  }
+
+  .faq-card h3 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-3);
+  }
+
+  .faq-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
   }
 </style>

@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Button from '../../components/Button.astro';
+
+const title = "Account Deletion Guides | School and Stuff";
+const description = "Learn how to delete your account and personal data on School and Stuff applications including Coven and Seer.";
+
+const guides = [
+  {
+    slug: 'coven',
+    name: 'Coven Account Deletion',
+    app: '🚀 Coven (Hardware-Attested Cohorts)',
+    gracePeriod: '7-Day Safety Grace Period',
+    description: 'Delete your Coven profile, registered app tracks, video proof recordings, and coin balances directly in-app.',
+    href: '/delete-account/coven'
+  },
+  {
+    slug: 'seer',
+    name: 'Seer Account Deletion',
+    app: '🔮 Seer (Exam Simulation)',
+    gracePeriod: '7-Day Automatic Deletion',
+    description: 'Delete your Seer student account, uploaded PDFs, exam simulation history, and progress metrics.',
+    href: '/delete-account/seer'
+  }
+];
+---
+
+<Layout title={title} description={description}>
+  <section class="deletion-header">
+    <div class="container text-center">
+      <h1 class="page-title animate-fade-in">Account Deletion Guides</h1>
+      <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
+        Select an application below to view step-by-step account and data deletion instructions.
+      </p>
+    </div>
+  </section>
+
+  <section class="deletion-directory">
+    <div class="container">
+      <div class="guides-grid">
+        {guides.map((guide, index) => (
+          <article class="guide-card animate-fade-in" style={`animation-delay: ${0.2 + (index * 0.1)}s`}>
+            <div class="guide-app">{guide.app}</div>
+            <h2 class="guide-title">{guide.name}</h2>
+            <span class="guide-grace">{guide.gracePeriod}</span>
+            <p class="guide-desc">{guide.description}</p>
+            <div class="guide-action">
+              <Button href={guide.href} variant="primary">View {guide.slug === 'coven' ? 'Coven' : 'Seer'} Deletion Guide &rarr;</Button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .deletion-header {
+    padding: var(--space-8) 0 var(--space-6) 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: var(--space-2);
+  }
+
+  .page-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+
+  .deletion-directory {
+    padding: var(--space-8) 0;
+  }
+
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-8);
+  }
+
+  .guide-card {
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-yellow);
+  }
+
+  .guide-app {
+    font-weight: 700;
+    color: var(--brand-yellow-darker);
+    margin-bottom: var(--space-2);
+  }
+
+  .guide-title {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .guide-grace {
+    display: inline-block;
+    background: var(--brand-yellow-light);
+    color: var(--brand-yellow-darker);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+    align-self: flex-start;
+  }
+
+  .guide-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+  }
+
+  .guide-action {
+    margin-top: auto;
+  }
+</style>

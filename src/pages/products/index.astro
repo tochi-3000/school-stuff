@@ -7,10 +7,21 @@ const description = "Explore software applications developed by School and Stuff
 
 const products = [
   {
+    slug: 'coven',
+    name: 'Coven',
+    tagline: 'Hardware-Attested 20-Tester Android Cohorts',
+    icon: '🚀',
+    logoImg: '/coven-logo.jpg',
+    badge: 'Developer & Testing Tool',
+    description: 'Never stress over Google Play 20-tester rule again. Pairs indie developers into verified, automated testing cohorts with hardware attestation and 30s video proof of work.',
+    href: '/products/coven'
+  },
+  {
     slug: 'seer',
     name: 'Seer',
     tagline: 'Exam Prediction & Simulation Platform',
     icon: '🔮',
+    logoImg: '/seer-logo.png',
     badge: 'EdTech & Exam Simulation',
     description: 'An intelligent engine that analyzes course syllabi and past questions to predict high-probability exam topics and generate custom simulation tests.',
     href: '/products/seer'
@@ -20,6 +31,7 @@ const products = [
     name: 'Geo',
     tagline: 'Farm & Area Measurement Application',
     icon: '🌐',
+    logoImg: '/geo-logo.jpg',
     badge: 'Land & Utility Tool',
     description: 'A fast, lightweight, and high-precision farm and area measurement application for measuring fields, property boundaries, and perimeters.',
     href: '/products/geo'
@@ -29,18 +41,10 @@ const products = [
     name: 'RearSyte',
     tagline: 'Screen Privacy & Anti-Shoulder Surfing',
     icon: '👁️',
+    logoImg: '',
     badge: 'Privacy & Security Tool',
     description: 'Detects when secondary viewers are looking over your shoulder at your screen using on-device machine learning (Google ML Kit). Built with Zero-Trust, Zero-Network Architecture.',
     href: '/products/rearsyte'
-  },
-  {
-    slug: 'coven',
-    name: 'Coven',
-    tagline: 'Hardware-Attested 20-Tester Android Cohorts',
-    icon: '🚀',
-    badge: 'Developer & Testing Tool',
-    description: 'Never stress over Google Play 20-tester rule again. Pairs indie developers into verified, automated testing cohorts with hardware attestation and 30s video proof of work.',
-    href: '/products/coven'
   }
 ];
 ---
@@ -61,7 +65,11 @@ const products = [
         {products.map((product, index) => (
           <article class="product-card animate-fade-in" style={`animation-delay: ${0.2 + (index * 0.1)}s`}>
             <div class="card-top">
-              <span class="card-icon">{product.icon}</span>
+              {product.logoImg ? (
+                <img src={product.logoImg} alt={`${product.name} Logo`} class="card-logo-img" />
+              ) : (
+                <span class="card-icon">{product.icon}</span>
+              )}
               <span class="card-badge">{product.badge}</span>
             </div>
             <h2 class="card-title">{product.name}</h2>
@@ -136,6 +144,14 @@ const products = [
 
   .card-icon {
     font-size: 2.5rem;
+  }
+
+  .card-logo-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+    box-shadow: var(--shadow-sm);
   }
 
   .card-badge {

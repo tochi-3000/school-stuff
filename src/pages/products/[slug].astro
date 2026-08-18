@@ -14,6 +14,7 @@ export function getStaticPaths() {
           tagline: 'An intelligent engine that helps students pass exams in flying colors.',
           badge: 'EdTech & Exam Simulation',
           icon: '🔮',
+          logoImg: '/seer-logo.png',
           description: 'Seer analyzes your course syllabi and past questions to predict high-probability exam topics, generate custom simulation tests, and build exam confidence.',
           playStoreUrl: 'https://play.google.com/store/apps/details?id=com.seer.app',
           privacyUrl: '/privacy/seer',
@@ -31,6 +32,7 @@ export function getStaticPaths() {
           tagline: 'A fast, lightweight, and high-precision farm and area measurement tool.',
           badge: 'Land & Utility Tool',
           icon: '🌐',
+          logoImg: '/geo-logo.jpg',
           description: 'Geo allows farmers, land surveyors, and outdoor enthusiasts to accurately measure land surface area, perimeter, and distances with real-time GPS precision.',
           privacyUrl: '/privacy/geo',
           termsUrl: '/terms/geo',
@@ -47,6 +49,7 @@ export function getStaticPaths() {
           tagline: 'Protect your screen privacy with real-time on-device machine learning.',
           badge: 'Privacy & Security Tool',
           icon: '👁️',
+          logoImg: '',
           description: 'RearSyte detects when secondary viewers look over your shoulder at your screen using Google ML Kit. Engineered under a Zero-Trust, Zero-Network Architecture.',
           privacyUrl: '/privacy/rearsyte',
           termsUrl: '/terms/rearsyte',
@@ -63,6 +66,7 @@ export function getStaticPaths() {
           tagline: 'Coven is the native Android attestation platform that pairs indie developers into verified, automated testing cohorts. 14 days of real device testing, guaranteed proof of work, and zero ghosting.',
           badge: '100% Real Physical Devices • Hardware-Attested • Zero Emulators',
           icon: '🚀',
+          logoImg: '/coven-logo.jpg',
           description: 'Coven pairs indie developers into verified, automated testing cohorts. 14 days of real device testing, guaranteed proof of work, and zero ghosting.',
           privacyUrl: '/privacy/coven',
           termsUrl: '/terms/coven',
@@ -81,7 +85,14 @@ const seoDescription = product.description;
   <section class="product-header">
     <div class="container text-center">
       <div class="product-badge">{product.badge}</div>
-      <h1 class="page-title animate-fade-in">{product.icon} {product.title}</h1>
+      <h1 class="page-title animate-fade-in product-header-title">
+        {product.logoImg ? (
+          <img src={product.logoImg} alt={`${product.name} Logo`} class="header-logo-img" />
+        ) : (
+          <span>{product.icon}</span>
+        )}
+        <span>{product.title}</span>
+      </h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
         {product.tagline}
       </p>
@@ -424,6 +435,22 @@ const seoDescription = product.description;
   .page-title {
     font-size: clamp(2rem, 3.5vw, 3rem);
     margin-bottom: var(--space-2);
+  }
+
+  .product-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .header-logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: var(--shadow-md);
   }
 
   .page-subtitle {

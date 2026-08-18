@@ -16,7 +16,7 @@ const description = "Discover Seer SaaS and physical EdTech products designed to
           Smart Software by <span class="highlight">School & Stuff</span>
         </h1>
         <p class="hero-subtitle">
-          We build powerful, reliable applications like Seer (Exam Simulation) and Geo (Farm & Area Measurement) to simplify learning and daily utility tasks.
+          We build powerful, reliable applications like Coven (Android Testers), Seer (Exam Simulation), Geo (Farm & Area), and RearSyte (Screen Privacy) to simplify daily tasks.
         </p>
         <div class="hero-actions">
           <Button href="/products" variant="primary">Explore Our Products</Button>
@@ -25,12 +25,19 @@ const description = "Discover Seer SaaS and physical EdTech products designed to
       </div>
       
       <div class="hero-visual animate-fade-in" style="animation-delay: 0.2s">
-        <div class="app-screenshot-wrapper">
-          <img 
-            src="/app-screenshot.jpg" 
-            alt="Seer App Dashboard" 
-            style="max-width: 320px; border-radius: 24px; box-shadow: var(--shadow-lg);" 
-          />
+        <div class="product-logos-grid">
+          <a href="/products/coven" class="logo-card">
+            <img src="/coven-logo.jpg" alt="Coven App Logo" class="product-logo-img" />
+            <span class="logo-card-title">Coven</span>
+          </a>
+          <a href="/products/seer" class="logo-card">
+            <img src="/seer-logo.png" alt="Seer App Logo" class="product-logo-img" />
+            <span class="logo-card-title">Seer</span>
+          </a>
+          <a href="/products/geo" class="logo-card">
+            <img src="/geo-logo.jpg" alt="Geo App Logo" class="product-logo-img" />
+            <span class="logo-card-title">Geo</span>
+          </a>
         </div>
       </div>
     </div>
@@ -111,13 +118,53 @@ const description = "Discover Seer SaaS and physical EdTech products designed to
     gap: var(--space-3);
   }
 
-  /* Hero Visual Styles (Glassmorphism) */
+  /* Hero Visual Styles (Product Logos Showcase Grid) */
   .hero-visual {
     position: relative;
-    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .product-logos-grid {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .logo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    background: var(--bg-primary);
+    padding: var(--space-3);
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .logo-card:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand-yellow);
+  }
+
+  .product-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: var(--space-2);
+  }
+
+  .logo-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
   }
 
   .glass-orb {

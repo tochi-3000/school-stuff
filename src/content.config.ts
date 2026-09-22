@@ -8,9 +8,12 @@ const blogCollection = defineCollection({
     title: z.string().max(100, { message: 'Title must be under 100 characters for optimal SEO.' }),
     description: z.string().min(50).max(160),
     pubDate: z.date(),
+    updatedDate: z.date().optional(),
     author: z.string(),
     image: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    category: z.string().optional(),
+    featured: z.boolean().optional(),
   }),
 });
 

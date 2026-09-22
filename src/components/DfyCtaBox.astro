@@ -1,0 +1,122 @@
+---
+import WhatsAppCta from './WhatsAppCta.astro';
+
+export interface Props {
+  headline?: string;
+  painPoint?: string;
+  buttonLabel?: string;
+  whatsappMessage?: string;
+}
+
+const {
+  headline = "Avoid Verification Delays & Address Suspensions in Abuja",
+  painPoint = "Most self-service setups in Abuja get flagged for video verification failures or duplicate plaza addresses. Our local Abuja team guarantees full compliance, verification, and local search optimization.",
+  buttonLabel = "WhatsApp Us: 0810 005 3846",
+  whatsappMessage = "Hello, I read your Google Business setup guide and would like to ask some questions about setting up my business in Abuja.",
+} = Astro.props;
+---
+
+<aside class="dfy-cta-box" aria-label="Professional Setup Assistance">
+  <div class="dfy-badge">Done-For-You Local SEO</div>
+  <div class="dfy-content">
+    <h3 class="dfy-title">{headline}</h3>
+    <p class="dfy-pain">{painPoint}</p>
+    
+    <div class="dfy-actions">
+      <WhatsAppCta 
+        message={whatsappMessage}
+        label={buttonLabel}
+        variant="button"
+      />
+      <a href="/services/google-business-profile-abuja" class="service-link">
+        Learn how our Done-For-You service works &rarr;
+      </a>
+    </div>
+  </div>
+</aside>
+
+<style>
+  .dfy-cta-box {
+    margin: var(--space-6) 0;
+    padding: var(--space-6);
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 2px solid var(--brand-yellow);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dfy-badge {
+    display: inline-block;
+    background: var(--brand-yellow-darker);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-2);
+  }
+
+  .dfy-title {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
+  }
+
+  .dfy-pain {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+  }
+
+  .dfy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .service-link {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 0.95rem;
+  }
+
+  .service-link:hover {
+    color: var(--brand-yellow-darker);
+  }
+
+  @media (max-width: 640px) {
+    .dfy-cta-box {
+      padding: 1.25rem;
+      margin: var(--space-4) 0;
+    }
+
+    .dfy-title {
+      font-size: 1.2rem;
+    }
+
+    .dfy-pain {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .dfy-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.75rem;
+    }
+
+    .service-link {
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+  }
+</style>

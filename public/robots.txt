@@ -1,0 +1,6 @@
+# Production Robots.txt for School and Stuff
+User-agent: *
+Allow: /
+
+# Direct Googlebot and Bingbot to the auto-generated sitemap index
+Sitemap: https://school-and-stuff.me/sitemap-index.xml

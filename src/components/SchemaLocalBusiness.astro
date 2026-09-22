@@ -1,0 +1,61 @@
+---
+export interface Props {
+  pageUrl?: string;
+}
+
+const currentCanonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : "https://school-and-stuff.me/services/google-business-profile-abuja";
+const { pageUrl = currentCanonical } = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${pageUrl}#organization`,
+      "name": "School & Stuff Digital Agency",
+      "description": "Professional Google Business Profile setup, video verification assistance, and local SEO services for businesses across Abuja, Nigeria.",
+      "telephone": "+2348100053846",
+      "url": pageUrl,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abuja",
+        "addressRegion": "Federal Capital Territory",
+        "addressCountry": "NG"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Abuja" },
+        { "@type": "AdministrativeArea", "name": "Wuse" },
+        { "@type": "AdministrativeArea", "name": "Wuse 2" },
+        { "@type": "AdministrativeArea", "name": "Maitama" },
+        { "@type": "AdministrativeArea", "name": "Garki" },
+        { "@type": "AdministrativeArea", "name": "Utako" },
+        { "@type": "AdministrativeArea", "name": "Jabi" },
+        { "@type": "AdministrativeArea", "name": "Gwarinpa" },
+        { "@type": "AdministrativeArea", "name": "Central Business District" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": "Google Business Profile Setup & Verification Services Abuja",
+      "serviceType": "Local SEO & Business Verification",
+      "description": "Done-For-You Google Maps and Google Business Profile setup, plaza address duplication resolution, video verification coaching, and local 3-pack optimization in Abuja.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "School & Stuff Digital Agency",
+        "telephone": "+2348100053846"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Abuja" },
+        { "@type": "AdministrativeArea", "name": "Wuse" },
+        { "@type": "AdministrativeArea", "name": "Maitama" },
+        { "@type": "AdministrativeArea", "name": "Utako" },
+        { "@type": "AdministrativeArea", "name": "Garki" },
+        { "@type": "AdministrativeArea", "name": "Jabi" }
+      ]
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)} />

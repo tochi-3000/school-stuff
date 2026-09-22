@@ -1,0 +1,326 @@
+---
+import WhatsAppCta from './WhatsAppCta.astro';
+---
+
+<div class="comparison-container" aria-label="Comparison between DIY and Done-For-You Google Business Profile Setup">
+  <!-- Desktop Table (Hidden on Mobile) -->
+  <div class="table-wrapper desktop-only">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th class="feature-col">Setup Aspect</th>
+          <th class="diy-col">Option 1: Do It Yourself (DIY)</th>
+          <th class="dfy-col highlighted">Option 2: Done-For-You (Our Team)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feature-name"><strong>Time &amp; Effort</strong></td>
+          <td class="diy-cell">10 to 20 hours navigating Google guidelines, recording videos, and troubleshooting rejections.</td>
+          <td class="dfy-cell highlighted"><strong>Zero hours required.</strong> Our local Abuja team manages the entire process from start to finish.</td>
+        </tr>
+        <tr>
+          <td class="feature-name"><strong>Plaza Address Risk (Banex, Wuse, Utako)</strong></td>
+          <td class="diy-cell">High risk of automated suspension due to duplicate address flags when sharing plazas.</td>
+          <td class="dfy-cell highlighted"><strong>Full compliance.</strong> We correctly configure suite formatting and documentation to prevent duplicate bans.</td>
+        </tr>
+        <tr>
+          <td class="feature-name"><strong>Video Verification in Nigeria</strong></td>
+          <td class="diy-cell">Frequently rejected by automated AI reviewers due to GPS drift, street sign issues, or camera flow errors.</td>
+          <td class="dfy-cell highlighted"><strong>Tested local staging protocol.</strong> We prepare your signage, keys, and POS walkthrough to ensure approval.</td>
+        </tr>
+        <tr>
+          <td class="feature-name"><strong>Abuja Local SEO Optimization</strong></td>
+          <td class="diy-cell">Basic profile creation with standard categories, missing high-traffic buyer keywords.</td>
+          <td class="dfy-cell highlighted"><strong>Maximum Map Pack Visibility.</strong> Strategic primary &amp; secondary categories, services, and photo tags.</td>
+        </tr>
+        <tr>
+          <td class="feature-name"><strong>Support Channel</strong></td>
+          <td class="diy-cell">Generic Google community forums or automated email queues with 2-4 week wait times.</td>
+          <td class="dfy-cell highlighted"><strong>Direct WhatsApp &amp; Phone.</strong> Talk directly to an Abuja specialist on 0810 005 3846.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mobile Stacked Cards (Hidden on Desktop) -->
+  <div class="mobile-cards mobile-only">
+    <!-- Option 1: DIY -->
+    <div class="m-card diy-m-card">
+      <div class="m-card-header">
+        <span class="m-badge diy-badge">Option 1</span>
+        <h3>Do It Yourself (DIY)</h3>
+      </div>
+      <ul class="m-list">
+        <li>
+          <span class="icon-bad">&times;</span>
+          <div><strong>10–20 Hours</strong> spent figuring out Google guidelines &amp; filming videos.</div>
+        </li>
+        <li>
+          <span class="icon-bad">&times;</span>
+          <div><strong>High Risk of Address Ban</strong> in shared plazas (Banex, Emab, Wuse 2).</div>
+        </li>
+        <li>
+          <span class="icon-bad">&times;</span>
+          <div><strong>Frequent Rejections</strong> by Google's automated video AI in Nigeria.</div>
+        </li>
+        <li>
+          <span class="icon-bad">&times;</span>
+          <div><strong>Basic Profile Only</strong> with unoptimized category selection.</div>
+        </li>
+        <li>
+          <span class="icon-bad">&times;</span>
+          <div><strong>Weeks of Waiting</strong> on automated Google email support queues.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Option 2: Done-For-You -->
+    <div class="m-card dfy-m-card">
+      <div class="m-card-header">
+        <span class="m-badge dfy-badge">Option 2 &bull; Recommended</span>
+        <h3>Done-For-You (Our Abuja Team)</h3>
+      </div>
+      <ul class="m-list">
+        <li>
+          <span class="icon-good">&check;</span>
+          <div><strong>Zero Hours of Your Time</strong> &mdash; we handle everything end-to-end.</div>
+        </li>
+        <li>
+          <span class="icon-good">&check;</span>
+          <div><strong>Plaza-Compliant Formatting</strong> avoiding duplicate address penalties.</div>
+        </li>
+        <li>
+          <span class="icon-good">&check;</span>
+          <div><strong>Tested Video Staging Protocol</strong> for first-time approval.</div>
+        </li>
+        <li>
+          <span class="icon-good">&check;</span>
+          <div><strong>Top-Tier Local SEO</strong> positioning you in Abuja's Map 3-Pack.</div>
+        </li>
+        <li>
+          <span class="icon-good">&check;</span>
+          <div><strong>Direct Abuja Phone &amp; WhatsApp</strong> support on 0810 005 3846.</div>
+        </li>
+      </ul>
+      <div class="m-cta-wrap">
+        <WhatsAppCta 
+          label="Ask Any Question on WhatsApp"
+          message="Hi, I am looking at your Done-For-You Google Business Profile setup in Abuja and have a few questions."
+          variant="button"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-footer-cta">
+    <div class="footer-cta-text">
+      <h4>Want to know if your shop or location qualifies?</h4>
+      <p>Ask us any question on <strong>0810 005 3846</strong> or text us on WhatsApp for more information.</p>
+    </div>
+    <WhatsAppCta 
+      label="Chat on WhatsApp"
+      message="Hi, I want to check if my business location in Abuja qualifies for Google Business verification."
+    />
+  </div>
+</div>
+
+<style>
+  .comparison-container {
+    margin: var(--space-8) 0;
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    border: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  /* Responsive Display Rules */
+  .desktop-only {
+    display: block;
+  }
+  .mobile-only {
+    display: none;
+  }
+
+  /* Desktop Table Styles */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+  }
+
+  .comparison-table th {
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-weight: 700;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .comparison-table th.highlighted {
+    background: #fef08a;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--brand-yellow-dark);
+  }
+
+  .comparison-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .feature-col { width: 25%; }
+  .diy-col { width: 35%; }
+  .dfy-col { width: 40%; }
+
+  .feature-name {
+    color: var(--text-primary);
+    background: #fafafa;
+  }
+
+  .diy-cell {
+    color: var(--text-secondary);
+  }
+
+  .dfy-cell.highlighted {
+    background: #fffdf0;
+    color: var(--text-primary);
+  }
+
+  /* Mobile Cards Styles */
+  .mobile-cards {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .m-card {
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    border: 1px solid #e5e7eb;
+    background: var(--bg-primary);
+  }
+
+  .m-card-header {
+    margin-bottom: 1rem;
+  }
+
+  .m-card-header h3 {
+    margin: 0.35rem 0 0 0;
+    font-size: 1.25rem;
+  }
+
+  .m-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-full);
+  }
+
+  .diy-badge {
+    background: #f3f4f6;
+    color: #4b5563;
+  }
+
+  .dfy-badge {
+    background: var(--brand-yellow-darker);
+    color: #ffffff;
+  }
+
+  .dfy-m-card {
+    background: linear-gradient(180deg, #fffdf0 0%, #fef9c3 100%);
+    border: 2px solid var(--brand-yellow);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.2);
+  }
+
+  .m-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .m-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .icon-bad {
+    color: #ef4444;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .icon-good {
+    color: #10b981;
+    font-size: 1.1rem;
+    font-weight: 900;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .m-cta-wrap {
+    margin-top: 0.5rem;
+  }
+
+  /* Footer CTA */
+  .table-footer-cta {
+    padding: var(--space-6);
+    background: var(--bg-secondary);
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .footer-cta-text h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.15rem;
+  }
+
+  .footer-cta-text p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-only {
+      display: flex;
+    }
+
+    .table-footer-cta {
+      padding: 1.25rem;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+    }
+
+    .footer-cta-text {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>

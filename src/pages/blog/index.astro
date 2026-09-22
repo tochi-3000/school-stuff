@@ -38,7 +38,7 @@ const posts = (await getCollection('blog')).sort(
                 </time>
               </div>
               <h2 class="blog-title">
-                <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
               </h2>
               <p class="blog-desc">{post.data.description}</p>
               
@@ -50,7 +50,7 @@ const posts = (await getCollection('blog')).sort(
                 </div>
               )}
               
-              <a href={`/blog/${post.slug}`} class="read-more">
+              <a href={`/blog/${post.id}`} class="read-more">
                 Read Article <span aria-hidden="true" class="arrow">&rarr;</span>
               </a>
             </div>
@@ -169,5 +169,36 @@ const posts = (await getCollection('blog')).sort(
     display: inline-block;
     margin-left: var(--space-1);
     transition: transform var(--transition-fast);
+  }
+
+  @media (max-width: 640px) {
+    .blog-header {
+      padding: var(--space-6) 0 var(--space-4) 0;
+    }
+
+    .page-title {
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .page-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .blog-list-section {
+      padding: var(--space-6) 0;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .blog-card {
+      padding: 1.25rem;
+    }
+
+    .blog-title {
+      font-size: 1.25rem;
+    }
   }
 </style>

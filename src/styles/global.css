@@ -103,6 +103,12 @@ img, video {
   padding: 0 var(--space-4);
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-2);
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

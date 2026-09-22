@@ -27,7 +27,8 @@ const {
     <!-- Primary Meta Tags -->
     <title>{title} | School and Stuff</title>
     <meta name="title" content={`${title} | School and Stuff`} />
-    <meta name="description" content={description} />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || Astro.url)} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

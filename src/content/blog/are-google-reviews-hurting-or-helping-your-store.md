@@ -8,8 +8,6 @@ featured: false
 tags: ["Google Reviews", "Abuja", "Local SEO", "Customer Acquisition", "Reputation Management"]
 ---
 
-# Are Reviews on Your Google Business Profile Hurting or Helping Your Store?
-
 If you ask ten Abuja business owners how they handle customer reviews on Google Maps, you will get two common responses:
 
 1. *"Reviews don't matter in Nigeria; customers just check my Instagram or message my WhatsApp."*

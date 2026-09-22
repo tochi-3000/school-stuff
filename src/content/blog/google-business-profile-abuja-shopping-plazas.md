@@ -8,8 +8,6 @@ featured: false
 tags: ["Abuja Plazas", "Google Business Profile", "Address Verification", "Wuse"]
 ---
 
-# Google Business Profile for Shops in Abuja Shopping Plazas: How to Avoid Duplicate Address Suspensions
-
 Commercial plazas are the lifeblood of retail and trade in Abuja. Commercial hubs along **Aminu Kano Crescent in Wuse 2**, electronics plazas in **Banex**, computer centers at **Emab**, and trade centers across **Utako** house hundreds of thriving businesses under shared roofs.
 
 However, when it comes to **Google Business Profile (GBP)**, these multi-tenant complexes are a major source of automated account suspensions.

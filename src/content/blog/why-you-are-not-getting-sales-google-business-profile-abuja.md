@@ -8,8 +8,6 @@ featured: false
 tags: ["Google Business Profile", "Abuja", "Sales Conversion", "Local Marketing", "Products Catalog"]
 ---
 
-# Why You're Not Getting Any Sales After Setting Up Google Business Profile for Your Abuja Store
-
 You spent days navigating address verification, uploaded your storefront pictures, and finally received that coveted green checkmark from Google: **"Your business is verified."**
 
 You waited for your phone to ring with orders. 

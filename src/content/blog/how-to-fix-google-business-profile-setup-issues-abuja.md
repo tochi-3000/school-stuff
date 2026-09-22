@@ -8,8 +8,6 @@ featured: false
 tags: ["Google Business Profile", "Abuja", "Troubleshooting", "Verification Fixes", "Local SEO"]
 ---
 
-# How to Fix Common Google Business Profile Setup Issues in Abuja (And What to Do Next)
-
 Setting up a Google Business Profile for an Abuja business often feels like navigating an obstacle course.
 
 You followed the standard prompts, entered your details, and expected a smooth process. Instead, you were hit with a rejected video verification, a phone number that Google refuses to display, or an automated suspension message because your shop shares a building in Banex Plaza or Wuse 2.

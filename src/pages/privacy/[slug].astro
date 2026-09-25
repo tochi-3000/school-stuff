@@ -36,7 +36,7 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
       <div class="legal-badge">{appIcon} {appName} Privacy Policy</div>
       <h1 class="page-title animate-fade-in">{appName} Privacy Policy</h1>
       <p class="page-subtitle animate-fade-in" style="animation-delay: 0.1s">
-        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : (slug === 'rearsyte' ? 'Last updated: August 5, 2026' : 'Last updated: August 17, 2026'))}
+        {slug === 'seer' ? 'Last updated: June 1, 2026' : (slug === 'geo' ? 'Last updated: July 28, 2026' : (slug === 'rearsyte' ? 'Last updated: August 5, 2026' : 'Last updated: September 25, 2026'))}
       </p>
     </div>
   </section>
@@ -194,7 +194,7 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
         {slug === 'coven' && (
           <div class="coven-policy">
             <div class="zero-data-banner" style="background-color: #f0fdf4; border-left-color: #22c55e; color: #15803d;">
-              🛡️ <strong>Third Millennium Software / Coven Platform Privacy Commitment:</strong> Effective Date: August 17, 2026.
+              🛡️ <strong>Third Millennium Software / Coven Platform Privacy Commitment:</strong> Effective Date: September 25, 2026.
             </div>
 
             <p>
@@ -215,8 +215,7 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
             <h3>B. Information Collected Automatically & Proof-of-Work Telemetry</h3>
             <ul>
               <li><strong>Proof-of-Work Screen Recordings:</strong> When you explicitly initiate an attestation session to test an assigned application, Coven records a timed screen capture (typically 30 seconds) of the target application in action.</li>
-              <li><strong>Application Usage Attestation Data:</strong> Duration and foreground timestamps verifying active interaction with the designated test application.</li>
-              <li><strong>Device & Attestation Identifiers:</strong> Device model, manufacturer, Android OS version, unique device fingerprint hash, and hardware integrity/attestation signals to prevent emulator fraud, botting, and sybil attacks.</li>
+              <li><strong>Device Hardware & Model Telemetry:</strong> Device manufacturer, hardware model designation (e.g., <code>Build.MANUFACTURER</code> and <code>Build.MODEL</code>), Android OS version, unique device fingerprint hash, and hardware integrity/attestation signals to evaluate device compatibility and prevent emulator fraud, botting, and sybil attacks.</li>
               <li><strong>Network & Diagnostic Data:</strong> IP address, internet connectivity status, and structured application error logs.</li>
               <li><strong>Push Notification Tokens:</strong> Firebase Cloud Messaging (FCM) registration tokens to deliver task notifications and status updates.</li>
             </ul>
@@ -240,16 +239,6 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
                     <td>Used strictly and exclusively during user-initiated 30-second testing sessions to record video proof that the assigned app was tested on a genuine physical device. Recording only occurs after an explicit system consent prompt and displays an ongoing foreground notification. Coven never records in the background or outside active test sessions.</td>
                   </tr>
                   <tr>
-                    <td><strong>Usage Access / App Statistics</strong></td>
-                    <td><code>PACKAGE_USAGE_STATS</code></td>
-                    <td>Used to cryptographically verify foreground testing duration (watchdog verification), proving that a tester actively spent the required time inside the developer's target application.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Package Visibility / Query</strong></td>
-                    <td><code>QUERY_ALL_PACKAGES</code></td>
-                    <td>Used solely to verify whether the designated testing application is installed on your physical device before initiating testing tasks and cohort syncs.</td>
-                  </tr>
-                  <tr>
                     <td><strong>Push Notifications</strong></td>
                     <td><code>POST_NOTIFICATIONS</code></td>
                     <td>Used on Android 13+ to send real-time alerts regarding daily cohort testing deadlines, task review approvals, escrow releases, and dispute resolutions.</td>
@@ -258,17 +247,28 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
               </table>
             </div>
 
-            <h2>3. How We Use Your Information</h2>
+            <h2>3. Device Model Collection & Usage Policy</h2>
+            <p>
+              To maintain testing authenticity, evaluate technical compatibility across Android’s diverse device ecosystem, and protect developers from botting and fraud, Coven collects and processes device model data (specifically, hardware manufacturer and model designation, such as <em>Google Pixel 8 Pro</em> or <em>Samsung Galaxy S24</em>).
+            </p>
+            <ul>
+              <li><strong>Developer Review & UI Compatibility:</strong> When a tester submits a test video recording for task completion, the tester's device model is presented directly to the application developer on the task video review screen. This allows developers to observe how their UI layouts render, identify aspect-ratio or screen-density bugs, and evaluate performance on specific hardware configurations.</li>
+              <li><strong>Anti-Fraud & Sybil Defense:</strong> Coven binds the device model and cryptographic device identifier to registered device records. This prevents malicious actors from operating multiple accounts or orchestrating automated bot farms on duplicate or spoofed hardware, ensuring cohort escrow and token integrity.</li>
+              <li><strong>Targeted Testing Compatibility:</strong> Hardware model information enables the platform to verify that testing assignments are distributed across authentic physical devices representing diverse hardware profiles.</li>
+              <li><strong>No Third-Party Sale or Tracking:</strong> Device model information is used strictly for internal platform verification, quality assurance, and security attestation. We never sell, lease, or license device specifications to third-party data brokers or advertising networks.</li>
+            </ul>
+
+            <h2>4. How We Use Your Information</h2>
             <p>We use the collected information for the following operational, security, and verification purposes:</p>
             <ul>
-              <li><strong>Automated Attestation & Proof of Work:</strong> To analyze and store screen recordings and usage metrics verifying legitimate testing of target apps.</li>
+              <li><strong>Automated Attestation & Proof of Work:</strong> To analyze and store screen recordings and hardware verification records verifying legitimate testing of target apps.</li>
               <li><strong>Cohort Reciprocity & Task Marketplace:</strong> To coordinate 20-tester closed testing cohorts, match developers with testers, and manage task lifecycles.</li>
               <li><strong>Escrow & Virtual Economy Management:</strong> To calculate strike counts, reputation scores, track Coven Coin balances, lock escrow for posted tasks, and release rewards upon verified completion.</li>
               <li><strong>Anti-Fraud & Hardware Integrity:</strong> To enforce single-device limits per cohort, detect emulator farms, and ensure genuine physical Android hardware is utilized.</li>
               <li><strong>Customer Support & Dispute Resolution:</strong> To review contested submissions where developers or testers disagree on test validity.</li>
             </ul>
 
-            <h2>4. Third-Party Services & Sub-Processors</h2>
+            <h2>5. Third-Party Services & Sub-Processors</h2>
             <p>We do not sell, rent, or trade your personal information. We share data only with the following trusted service providers necessary to operate the Platform:</p>
             <ul>
               <li><strong>Supabase, Inc. (Backend, Database & Storage):</strong> Hosts user authentication sessions, PostgreSQL database tables, and secure cloud storage for app icons and proof-of-work video submissions.</li>
@@ -276,13 +276,13 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
               <li><strong>DiceBear API:</strong> Used to render deterministic, auto-generated profile avatar artwork using anonymized name/email hash seeds.</li>
             </ul>
 
-            <h2>5. Data Sharing Between Platform Users</h2>
+            <h2>6. Data Sharing Between Platform Users</h2>
             <ul>
-              <li><strong>Between Testers and App Developers:</strong> When a tester completes an assigned test, the app developer receives the proof-of-work video recording, testing feedback, and verification timestamp to evaluate test quality.</li>
+              <li><strong>Between Testers and App Developers:</strong> When a tester completes an assigned test, the app developer receives the proof-of-work video recording, testing feedback, verification timestamp, and the tester's hardware device model (e.g., manufacturer and model name) on the task review interface to assess visual rendering and hardware-specific compatibility. Private credentials, email addresses, and underlying cryptographic device hashes are never disclosed to developers.</li>
               <li><strong>Public/Cohort Visibility:</strong> Within a cohort or leaderboard, other verified cohort members can view your public developer name, verification streak, and completed test counts. Your password, private email, and device hardware hashes are never exposed to other users.</li>
             </ul>
 
-            <h2>6. Data Retention & Account Deletion Policy</h2>
+            <h2>7. Data Retention & Account Deletion Policy</h2>
             <p>We retain your data only for as long as your account remains active or as needed to maintain platform attestation integrity:</p>
             <ul>
               <li><strong>Active Accounts:</strong> User profiles, app registration details, and coin balances are maintained while your account is active.</li>
@@ -290,7 +290,7 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
               <li><strong>Account Deletion (Google Play Compliant):</strong> You can initiate account deletion at any time directly through the Coven Platform application under your Profile settings or visit our <a href="/delete-account">Account Deletion Page</a>. When requested, your account enters a scheduled deletion grace period (<code>scheduled_deletion_at</code>), after which all personal identifiers, auth records, active sessions, and registered apps are permanently erased or anonymized from our primary databases.</li>
             </ul>
 
-            <h2>7. Security Safeguards</h2>
+            <h2>8. Security Safeguards</h2>
             <p>We implement industry-standard production safeguards to protect your personal information:</p>
             <ul>
               <li><strong>Encrypted Transmission:</strong> All network communications between Coven and our backend use TLS 1.3 encryption (HTTPS/WSS).</li>
@@ -298,28 +298,28 @@ const seoDescription = `Official Privacy Policy for ${appName} (${appType}) deve
               <li><strong>Row-Level Security (RLS):</strong> Database records in Supabase are enforced with strict Row-Level Security policies, ensuring users can only read and mutate authorized records.</li>
             </ul>
 
-            <h2>8. International Data Transfers & Children's Privacy</h2>
+            <h2>9. International Data Transfers & Children's Privacy</h2>
             <ul>
               <li><strong>International Transfers:</strong> Your data may be processed on servers located outside your home country. By using the platform, you consent to the transfer of information to jurisdictions where our cloud infrastructure providers operate.</li>
               <li><strong>Children's Privacy:</strong> Coven is designed exclusively for software developers and Android app testers aged 18 and older (or the age of majority in your jurisdiction). We do not knowingly collect personal data from children under 13 (or under 16 in the EU).</li>
             </ul>
 
-            <h2>9. Your Rights (GDPR & CCPA / CPRA)</h2>
+            <h2>10. Your Rights (GDPR & CCPA / CPRA)</h2>
             <p>Depending on your geographic location, you may have the following rights regarding your personal information:</p>
             <ul>
               <li><strong>Right to Access / Portability:</strong> Request a copy of the personal data we maintain about you.</li>
               <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete information.</li>
               <li><strong>Right to Erasure / Deletion:</strong> Request the permanent deletion of your personal data.</li>
-              <li><strong>Right to Withdraw Consent:</strong> Revoke permissions (such as Notifications or Usage Access) at any time via your Android device system settings.</li>
+              <li><strong>Right to Withdraw Consent:</strong> Revoke permissions (such as Notifications or Media Projection consent) at any time via your Android device system settings.</li>
             </ul>
-            <p>To exercise any of these rights, contact us using the information provided in Section 11.</p>
+            <p>To exercise any of these rights, contact us using the information provided in Section 12.</p>
 
-            <h2>10. Changes to This Privacy Policy</h2>
+            <h2>11. Changes to This Privacy Policy</h2>
             <p>
               We may update this Privacy Policy periodically to reflect enhancements to our testing features, attestation mechanisms, or regulatory requirements. We will notify you of material changes by updating the "Last Updated" date at the top of this document and via in-app push notifications when appropriate.
             </p>
 
-            <h2>11. Contact Us</h2>
+            <h2>12. Contact Us</h2>
             <p>
               If you have questions, concerns, or data protection inquiries regarding this Privacy Policy, please contact us at:
             </p>

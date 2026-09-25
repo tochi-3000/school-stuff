@@ -61,7 +61,7 @@ const termsList = [
             <span class="terms-updated">Last Updated: {item.updated}</span>
             <p class="terms-desc">{item.description}</p>
             <div class="terms-action">
-              <Button href={item.href} variant="primary">Read {item.slug === 'seer' ? 'Seer' : 'Geo'} Terms &rarr;</Button>
+              <Button href={item.href} variant="primary">Read {item.name} &rarr;</Button>
             </div>
           </article>
         ))}
@@ -82,13 +82,14 @@ const termsList = [
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     margin-bottom: var(--space-2);
     color: var(--text-primary);
+    line-height: 1.2;
   }
 
   .page-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
   }
 
@@ -98,8 +99,8 @@ const termsList = [
 
   .terms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: var(--space-6);
   }
 
   .terms-card {
@@ -110,6 +111,7 @@ const termsList = [
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   }
 
   .terms-card:hover {
@@ -124,8 +126,9 @@ const termsList = [
   }
 
   .terms-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: var(--space-1);
+    line-height: 1.3;
   }
 
   .terms-updated {
@@ -143,5 +146,45 @@ const termsList = [
 
   .terms-action {
     margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .terms-header {
+      padding: var(--space-6) 0 var(--space-4) 0;
+    }
+
+    .page-title {
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+    }
+
+    .terms-directory {
+      padding: var(--space-6) 0;
+    }
+
+    .terms-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .terms-card {
+      padding: var(--space-4);
+    }
+
+    .terms-title {
+      font-size: 1.3rem;
+    }
+
+    .terms-action :global(.btn) {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-4);
+      line-height: 1.35;
+      min-height: 48px;
+    }
   }
 </style>

@@ -290,7 +290,7 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
 
         <div class="terms-nav-footer">
           <Button href="/terms" variant="secondary">&larr; Back to All Terms of Service</Button>
-          <Button href="/terms/rearsyte" variant="primary">View RearSyte Terms of Service &rarr;</Button>
+          <Button href={`/privacy/${slug}`} variant="primary">View {appName} Privacy Policy &rarr;</Button>
         </div>
 
       </div>
@@ -325,6 +325,7 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
     font-size: clamp(2.2rem, 4vw, 3.2rem);
     margin-bottom: var(--space-1);
     color: var(--text-primary);
+    line-height: 1.2;
   }
 
   .page-subtitle {
@@ -352,19 +353,42 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
     margin-bottom: var(--space-3);
   }
 
-  .prose p, .prose ul {
+  .prose h3 {
+    margin-top: var(--space-4);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .prose p, .prose ul, .prose ol {
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: var(--space-4);
   }
 
-  .prose ul {
+  .prose ul, .prose ol {
     padding-left: var(--space-5);
   }
 
   .prose li {
     margin-bottom: var(--space-2);
+  }
+
+  .prose code {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    background: var(--bg-secondary);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: monospace;
+    border: 1px solid #e5e7eb;
+  }
+
+  .prose a {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .terms-nav-footer {
@@ -376,5 +400,54 @@ const seoDescription = `Official Terms of Service for ${appName} (${appType}) de
     border-top: 1px solid #e5e7eb;
     gap: var(--space-4);
     flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .legal-header {
+      padding: var(--space-6) 0 var(--space-4) 0;
+    }
+
+    .page-title {
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+    }
+
+    .legal-content {
+      padding: var(--space-6) 0;
+    }
+
+    .prose h2 {
+      font-size: 1.35rem;
+      margin-top: var(--space-5);
+    }
+
+    .prose h3 {
+      font-size: 1.15rem;
+    }
+
+    .prose p, .prose ul, .prose ol {
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .prose ul, .prose ol {
+      padding-left: 1.25rem;
+    }
+
+    .terms-nav-footer {
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: var(--space-3);
+      margin-top: var(--space-6);
+      padding-top: var(--space-4);
+    }
+
+    .terms-nav-footer :global(.btn) {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-4);
+      line-height: 1.35;
+      min-height: 48px;
+    }
   }
 </style>

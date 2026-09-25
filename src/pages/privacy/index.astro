@@ -61,7 +61,7 @@ const policies = [
             <span class="policy-updated">Last Updated: {policy.updated}</span>
             <p class="policy-desc">{policy.description}</p>
             <div class="policy-action">
-              <Button href={policy.href} variant="primary">Read {policy.slug === 'seer' ? 'Seer' : 'Geo'} Privacy Policy &rarr;</Button>
+              <Button href={policy.href} variant="primary">Read {policy.name} &rarr;</Button>
             </div>
           </article>
         ))}
@@ -82,13 +82,14 @@ const policies = [
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     margin-bottom: var(--space-2);
     color: var(--text-primary);
+    line-height: 1.2;
   }
 
   .page-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
   }
 
@@ -98,8 +99,8 @@ const policies = [
 
   .policies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: var(--space-6);
   }
 
   .policy-card {
@@ -110,6 +111,7 @@ const policies = [
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
   }
 
   .policy-card:hover {
@@ -124,15 +126,15 @@ const policies = [
   }
 
   .policy-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: var(--space-1);
+    line-height: 1.3;
   }
 
   .policy-updated {
     font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: var(--space-4);
-
   }
 
   .policy-desc {
@@ -144,5 +146,45 @@ const policies = [
 
   .policy-action {
     margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-header {
+      padding: var(--space-6) 0 var(--space-4) 0;
+    }
+
+    .page-title {
+      font-size: clamp(1.75rem, 6vw, 2.25rem);
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+    }
+
+    .privacy-directory {
+      padding: var(--space-6) 0;
+    }
+
+    .policies-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .policy-card {
+      padding: var(--space-4);
+    }
+
+    .policy-title {
+      font-size: 1.3rem;
+    }
+
+    .policy-action :global(.btn) {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-4);
+      line-height: 1.35;
+      min-height: 48px;
+    }
   }
 </style>
